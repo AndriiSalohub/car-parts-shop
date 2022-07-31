@@ -61,7 +61,7 @@ const NavBar = () => {
                         <li className="menu-laptop-nav-bar-list-item">
                             <NavLink to="/contact">CONTACT</NavLink>
                         </li>
-                        <li className="menu-laptop-nav-bar-list-item">
+                        <li className="menu-laptop-nav-bar-list-item buy-now">
                             <NavLink to="/but-now">BUY NOW</NavLink>
                         </li>
                     </ul>

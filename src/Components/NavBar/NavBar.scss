@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+$border: #202020;
+$ham-menu-text-color: #828282;
+$transparent: rgba(255, 255, 255, 0);
+
 * {
     box-sizing: border-box;
 }
@@ -53,15 +58,15 @@
             margin-top: 30px;
             &-list {
                 &:last-child {
-                    border-bottom: 1px solid #202020;
+                    border-bottom: 1px solid $border;
                 }
                 &-item {
-                    border-top: 1px solid #202020;
+                    border-top: 1px solid $border;
                     padding: 12px 10px;
                     font-size: 14px;
                     & a {
                         text-decoration: none;
-                        color: #828282;
+                        color: $ham-menu-text-color;
                         font-weight: 700;
                         font-family: 'Roboto', sans-serif;
                         & .active {
@@ -79,16 +84,16 @@
             &-input {
                 width: 100%;
                 display: block;
-                background-color: rgba(255, 255, 255, 0);
+                background-color: $transparent;
                 margin-top: 20px;
                 padding: 15px 10px;
                 border-radius: 12px;
                 outline: none;
-                border: 1px solid #202020;
-                color: #828282;
+                border: 1px solid $border;
+                color: $ham-menu-text-color;
                 &::placeholder {
                     font-size: 15px;
-                    color: #828282;
+                    color: $ham-menu-text-color;
                 }
             }
             &-btn {
@@ -98,7 +103,7 @@
                 width: 18px;
                 height: 18px;
                 border: none;
-                background-color: rgba(255, 255, 255, 0);
+                background-color: $transparent;
                 background-image: url('../../Assets/Images/search-icon.png');
                 background-repeat: no-repeat;
             }
@@ -228,9 +233,6 @@
                         font-family: 'Roboto', sans-serif;
                     }
                 }
-                &:last-child {
-                    color: #808080;
-                }
             }
         }
     }
@@ -238,35 +240,7 @@
 
 @media (min-width: 1666px) {
     .menu {
-        grid-template-columns: 1.5fr 3fr 1fr;
         margin: 0px 300px;
         padding-top: 20px;
-        &-logo {
-            justify-self: start;
-            margin-left: 0px;
-        }
-        &-hamburger {
-            display: none;
-        }
-        &-laptop-nav-bar {
-            display: block;
-            &-list {
-                display: grid;
-                grid-template-columns: repeat(6, 1fr);
-                text-align: center;
-                &-item {
-                    & a {
-                        text-decoration: none;
-                        font-weight: 700;
-                        color: white;
-                        font-size: 15px;
-                        font-family: 'Roboto', sans-serif;
-                    }
-                }
-                &:last-child {
-                    color: #808080;
-                }
-            }
-        }
     }
 }

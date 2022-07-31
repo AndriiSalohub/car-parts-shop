@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
+.welcome {
+    position: relative;
+    margin: 0 15px;
+    height: 40vh;
+    &-img {
+        background: url('https://themes.muffingroup.com/be/carparts/wp-content/uploads/2020/09/carparts-slider-pic1.jpg')
+            no-repeat center center;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+    }
+}

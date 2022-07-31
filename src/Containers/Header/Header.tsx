@@ -1,6 +1,7 @@
 import React from 'react'
 
 import NavBar from '../../Components/NavBar/NavBar'
+import Welcome from '../../Components/Welcome/Welcome'
 
 import './Header.scss'
 
@@ -9,6 +10,7 @@ const Header = () => {
         <>
             <header className="header">
                 <NavBar />
+                <Welcome />
             </header>
         </>
     )
