@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+$transparent: rgba(255, 255, 255, 0);
+
+* {
+    box-sizing: border-box;
+}
+
+.player {
+    &-close-btn {
+        position: absolute;
+        top: 120px;
+        right: 100px;
+        outline: none;
+        border: none;
+        background-color: $transparent;
+        font-size: 25px;
+        color: #a9a9a9;
+        font-family: 'Nunito', sans-serif;
+        font-weight: 700;
+    }
+}
+
+@media (min-width: 1440px) {
+    .player {
+        &-close-btn {
+            right: 310px;
+        }
+    }
+}
+
+@media (min-width: 1660px) {
+    .player {
+        &-close-btn {
+            top: 200px;
+            right: 520px;
+        }
+    }
+}
