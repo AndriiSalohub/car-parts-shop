@@ -216,5 +216,12 @@
     .welcome {
         height: 80vh;
         margin: 0 150px;
+        &-popup-video-btn {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            bottom: 11.5%;
+            right: 13.4%;
+        }
     }
 }
