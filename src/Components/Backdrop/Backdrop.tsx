@@ -5,13 +5,10 @@ import './Backdrop.scss'
 interface BackdropProps {
     children: React.ReactChild | React.ReactNode
     ClosePopUp: Function
+    popUpOpen: Boolean
 }
 
-window.addEventListener('scroll', (e) => {
-    window.scrollTo(0, 0)
-})
-
-const Backdrop = ({ children, ClosePopUp }: BackdropProps) => {
+const Backdrop = ({ children, ClosePopUp, popUpOpen }: BackdropProps) => {
     return (
         <motion.div
             className="backdrop"

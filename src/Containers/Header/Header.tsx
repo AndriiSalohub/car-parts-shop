@@ -18,6 +18,10 @@ const Header = () => {
         setPopUpOpen(false)
     }
 
+    popUpOpen
+        ? (document.body.style.overflow = 'hidden')
+        : (document.body.style.overflow = 'auto')
+
     return (
         <>
             <header className="header">
@@ -31,6 +35,7 @@ const Header = () => {
                                 ClosePopUp={ClosePopUp}
                             />
                         }
+                        popUpOpen={popUpOpen}
                         ClosePopUp={ClosePopUp}
                     />
                 ) : null}
