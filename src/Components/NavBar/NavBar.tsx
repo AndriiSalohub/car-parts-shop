@@ -9,6 +9,14 @@ import 'react-modern-drawer/dist/index.css'
 const NavBar = () => {
     const [isOpen, setOpen] = useState(false)
     const [activePanel, setActivePanel] = useState(true)
+
+    const { scrollY } = useViewportScroll()
+    const offsetY = [0, 300]
+
+    const heightSize = [150, 100]
+
+    const height = useTransform(scrollY, offsetY, heightSize)
+
     const toggleDrawer = () => {
         setOpen((prevState) => !prevState)
     }
@@ -19,7 +27,7 @@ const NavBar = () => {
 
     return (
         <>
-            <motion.div className="menu">
+            <motion.div className="menu" style={{ height }}>
                 <Link to="/">
                     <img
                         src="https://i.ibb.co/tKmdYGt/logo.png"
