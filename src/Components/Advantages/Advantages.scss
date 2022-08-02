@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.advantages {
+    display: grid;
+    margin: 0 30px;
+    &-img {
+        margin-bottom: 20px;
+    }
+    &-title {
+        margin-bottom: 15px;
+        font-size: 15px;
+        line-height: 21px;
+        font-family: 'Comfortaa', cursive;
+    }
+    &-description {
+        margin-bottom: 30px;
+        font-size: 13px;
+        font-family: 'Inter', sans-serif;
+    }
+}
+
+@media (min-width: 768px) {
+    .advantages {
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        padding: 10px;
+
+        &-title {
+            font-size: 21px;
+            line-height: 30px;
+        }
+        &-description {
+            font-size: 15px;
+            line-height: 20px;
+            padding-right: 10px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .advantages {
+        padding: 15px;
+        &-title {
+            font-size: 25px;
+            line-height: 35px;
+        }
+        &-description {
+            font-size: 17px;
+            line-height: 25px;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .advantages {
+        margin: 0 100px;
+        &-description {
+            padding-right: 20px;
+        }
+    }
+}
+
+@media (min-width: 1660px) {
+    .advantages {
+        margin: 0 250px;
+        &-description {
+            padding-right: 30px;
+        }
+    }
+}
