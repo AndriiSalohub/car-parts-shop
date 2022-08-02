@@ -42,8 +42,6 @@ const App = () => {
                                 />
                             ) : null}
                             <Advantages />
-                            <Advantages />
-                            <Advantages />
                         </>
                     }
                 />
