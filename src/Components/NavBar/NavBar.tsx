@@ -1,15 +1,14 @@
 import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Squash as Hamburger } from 'hamburger-react'
-import './NavBar.scss'
 import Drawer from 'react-modern-drawer'
+import { useTransform, motion, useViewportScroll } from 'framer-motion'
+import './NavBar.scss'
 import 'react-modern-drawer/dist/index.css'
 
 const NavBar = () => {
     const [isOpen, setOpen] = useState(false)
-
     const [activePanel, setActivePanel] = useState(true)
-
     const toggleDrawer = () => {
         setOpen((prevState) => !prevState)
     }
@@ -20,7 +19,7 @@ const NavBar = () => {
 
     return (
         <>
-            <div className="menu">
+            <motion.div className="menu">
                 <Link to="/">
                     <img
                         src="https://i.ibb.co/tKmdYGt/logo.png"
@@ -179,7 +178,7 @@ const NavBar = () => {
                         </ul>
                     </nav>
                 </Drawer>
-            </div>
+            </motion.div>
         </>
     )
 }

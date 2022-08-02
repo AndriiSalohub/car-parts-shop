@@ -6,14 +6,21 @@
 
 .welcome {
     position: relative;
-    margin: 0 15px;
-    height: 40vh;
+    padding: 0 15px;
+    height: 28vh;
+    width: 100%;
+    background-color: #111111;
+    margin-bottom: 15vh;
     &-img {
+        position: absolute;
         background: url('https://themes.muffingroup.com/be/carparts/wp-content/uploads/2020/09/carparts-slider-pic1.jpg')
             no-repeat center center;
         background-size: cover;
-        height: 100%;
-        width: 100%;
+        height: 260px;
+        width: 290px;
+        top: 5%;
+        left: 50%;
+        transform: translate(-50%, 0%);
     }
     &-icon {
         width: 120px;
@@ -82,7 +89,11 @@
 
 @media (min-width: 375px) {
     .welcome {
-        margin: 10px 20px 0 20px;
+        padding: 10px 20px 0 20px;
+        &-img {
+            height: 265px;
+            width: 345px;
+        }
         &-icon {
             top: 15%;
             left: 31%;
@@ -103,7 +114,12 @@
 
 @media (min-width: 425px) {
     .welcome {
-        margin: 10px 30px 0 30px;
+        padding: 10px 30px 0 30px;
+        margin-bottom: 18vh;
+        &-img {
+            height: 300px;
+            width: 390px;
+        }
         &-icon {
             left: 32%;
             transform: translate(-32%, -15%);
@@ -117,10 +133,11 @@
 
 @media (min-width: 768px) {
     .welcome {
-        margin: 0 30px;
-        height: 75vh;
+        padding: 0 30px;
+        height: 60vh;
         &-img {
-            margin-top: 20px;
+            height: 545px;
+            width: 700px;
         }
         &-icon {
             width: 150px;
@@ -149,8 +166,13 @@
 
 @media (min-width: 1024px) {
     .welcome {
-        height: 55vh;
-        margin: 0 45px;
+        height: 50vh;
+        padding: 0 45px;
+        margin-bottom: 20vh;
+        &-img {
+            height: 490px;
+            width: 940px;
+        }
         &-icon {
             top: 10%;
             left: 4%;
@@ -217,8 +239,13 @@
 
 @media (min-width: 1440px) {
     .welcome {
-        height: 90vh;
-        margin: 0 60px;
+        height: 70vh;
+        padding: 0 60px;
+        margin-bottom: 25vh;
+        &-img {
+            height: 685px;
+            width: 1315px;
+        }
         &-icon {
             top: 10%;
             left: 4%;
@@ -263,8 +290,13 @@
 
 @media (min-width: 1660px) {
     .welcome {
-        height: 80vh;
-        margin: 0 150px;
+        height: 65vh;
+        padding: 0 150px;
+        margin-bottom: 27vh;
+        &-img {
+            height: 780px;
+            width: 1500px;
+        }
         &-popup-video-btn {
             width: 75px;
             height: 75px;

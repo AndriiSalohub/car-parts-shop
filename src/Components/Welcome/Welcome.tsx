@@ -8,13 +8,13 @@ interface WelcomeProp {
 
 const Welcome = ({ OpenPopUp }: WelcomeProp) => {
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-            className="welcome"
-        >
-            <div className="welcome-img">
+        <div className="welcome">
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="welcome-img"
+            >
                 <motion.div
                     initial={{ y: 100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
@@ -62,8 +62,8 @@ const Welcome = ({ OpenPopUp }: WelcomeProp) => {
                     className="welcome-popup-video-btn"
                     onClick={() => OpenPopUp()}
                 ></motion.button>
-            </div>
-        </motion.div>
+            </motion.div>
+        </div>
     )
 }
 

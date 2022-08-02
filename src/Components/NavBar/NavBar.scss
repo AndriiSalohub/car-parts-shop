@@ -9,7 +9,11 @@ $transparent: rgba(255, 255, 255, 0);
 }
 
 .menu {
-    position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #111111;
+    width: 100%;
     &-laptop-nav-bar {
         display: none;
     }
@@ -142,11 +146,11 @@ $transparent: rgba(255, 255, 255, 0);
 @media (min-width: 768px) {
     .menu {
         display: grid;
-        margin: 0px 50px;
+        padding: 0 50px;
         grid-template-columns: 3fr 0.6fr 1fr;
         align-items: center;
         &-logo {
-            margin: 20px;
+            margin: 20px 0;
         }
         &-hamburger {
             position: relative;
@@ -191,8 +195,7 @@ $transparent: rgba(255, 255, 255, 0);
 
 @media (min-width: 1024px) {
     .menu {
-        margin: 0px 75px;
-        padding-top: 10px;
+        padding: 10px 75px 0 75px;
         &-hamburger {
             justify-self: end;
         }
@@ -210,7 +213,7 @@ $transparent: rgba(255, 255, 255, 0);
 @media (min-width: 1440px) {
     .menu {
         grid-template-columns: 1.5fr 3fr 1fr;
-        margin: 0px 100px;
+        padding: 10px 100px 0 100px;
         &-logo {
             justify-self: start;
             margin-left: 0px;
@@ -240,7 +243,6 @@ $transparent: rgba(255, 255, 255, 0);
 
 @media (min-width: 1666px) {
     .menu {
-        margin: 0px 300px;
-        padding-top: 20px;
+        padding: 20px 300px 0 300px;
     }
 }
