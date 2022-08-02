@@ -33,9 +33,9 @@
         visibility: visible;
         margin: 10px auto 0 auto;
         position: absolute;
-        top: 20%;
-        left: 50%;
-        transform: translate(-50%, -20%);
+        top: 15%;
+        left: 30%;
+        transform: translate(-30%, -15%);
     }
     &-title {
         font-family: Comfortaa;
@@ -47,9 +47,9 @@
         font-weight: 400;
         font-size: 31px;
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 65%;
+        left: 10%;
+        transform: translate(-10%, -65%);
     }
     &-subtitle {
         display: none;
@@ -68,15 +68,50 @@
         padding-right: 16px;
         border: none;
         position: absolute;
-        top: 80%;
-        left: 50%;
-        transform: translate(-50%, -80%);
+        top: 90%;
+        left: 27%;
+        transform: translate(-27%, -90%);
     }
     &-popup-video-img {
         display: none;
     }
     &-popup-video-btn {
         display: none;
+    }
+}
+
+@media (min-width: 375px) {
+    .welcome {
+        margin: 10px 20px 0 20px;
+        &-icon {
+            top: 15%;
+            left: 31%;
+            transform: translate(-31%, -15%);
+        }
+        &-title {
+            top: 65%;
+            left: 9%;
+            transform: translate(-9%, -65%);
+        }
+        &-btn {
+            top: 87.5%;
+            left: 30%;
+            transform: translate(-30%, -87.5%);
+        }
+    }
+}
+
+@media (min-width: 425px) {
+    .welcome {
+        margin: 10px 30px 0 30px;
+        &-icon {
+            left: 32%;
+            transform: translate(-32%, -15%);
+        }
+        &-btn {
+            left: 31%;
+            transform: translate(-31%, -87.5%);
+        }
     }
 }
 
@@ -91,14 +126,23 @@
             width: 150px;
             font-size: 15px;
             padding: 10px;
+            top: 20%;
+            left: 39%;
+            transform: translate(-39%, -20%);
         }
         &-title {
             font-size: 75px;
             line-height: 75px;
+            top: 50%;
+            left: 7.5%;
+            transform: translate(-7.5%, -50%);
         }
         &-btn {
             font-size: 17px;
             padding: 15px;
+            top: 85%;
+            left: 30%;
+            transform: translate(-30%, -85%);
         }
     }
 }
@@ -113,9 +157,9 @@
             transform: translate(-10%, -5%);
         }
         &-title {
-            top: 35%;
-            left: 5%;
-            transform: translate(-5%, -35%);
+            top: 43%;
+            left: 4%;
+            transform: translate(-4%, -43%);
             width: 437px;
             text-align: left;
             line-height: 62px;
@@ -131,18 +175,18 @@
             font-weight: 400;
             font-size: 11px;
             position: absolute;
-            top: 65%;
-            left: 5%;
-            transform: translate(-5%, -65%);
+            top: 71%;
+            left: 4.5%;
+            transform: translate(-4.5%, -71%);
             width: 35%;
         }
 
         &-btn {
             font-size: 10px;
             padding: 5px 10px 5px 10px;
-            top: 85%;
-            left: 3%;
-            transform: translate(-3%, -85%);
+            top: 90%;
+            left: 4.5%;
+            transform: translate(-4.5%, -90%);
         }
         &-popup-video-img {
             display: block;
@@ -181,9 +225,9 @@
             transform: translate(-10%, -5%);
         }
         &-title {
-            top: 35%;
-            left: 5%;
-            transform: translate(-5%, -35%);
+            top: 37%;
+            left: 3.5%;
+            transform: translate(-3.5%, -37%);
             width: 614px;
             text-align: left;
             line-height: 88px;
@@ -192,11 +236,16 @@
         &-subtitle {
             font-size: 16px;
             line-height: 31px;
+            top: 65%;
+            left: 4.5%;
+            transform: translate(-4.5%, -65%);
         }
 
         &-btn {
             font-size: 15px;
             padding: 10px 15px 10px 15px;
+            top: 85%;
+            transform: translate(-4.5%, -85%);
         }
         &-popup-video-img {
             width: 500px;
