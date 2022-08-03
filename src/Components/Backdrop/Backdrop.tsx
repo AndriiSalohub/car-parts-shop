@@ -1,14 +1,13 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { motion } from 'framer-motion'
 import './Backdrop.scss'
 
 interface BackdropProps {
     children: React.ReactChild | React.ReactNode
     ClosePopUp: Function
-    popUpOpen: Boolean
 }
 
-const Backdrop = ({ children, ClosePopUp, popUpOpen }: BackdropProps) => {
+const Backdrop: FC<BackdropProps> = ({ children, ClosePopUp }) => {
     return (
         <motion.div
             className="backdrop"
@@ -16,6 +15,7 @@ const Backdrop = ({ children, ClosePopUp, popUpOpen }: BackdropProps) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
         >
             {children}
         </motion.div>

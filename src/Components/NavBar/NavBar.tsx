@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, FC } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Squash as Hamburger } from 'hamburger-react'
 import Drawer from 'react-modern-drawer'
@@ -6,22 +6,22 @@ import { useTransform, motion, useViewportScroll } from 'framer-motion'
 import './NavBar.scss'
 import 'react-modern-drawer/dist/index.css'
 
-const NavBar = () => {
-    const [isOpen, setOpen] = useState(false)
-    const [activePanel, setActivePanel] = useState(true)
+const NavBar: FC = () => {
+    const [isOpen, setOpen] = useState<boolean>(false)
+    const [activePanel, setActivePanel] = useState<boolean>(true)
 
     const { scrollY } = useViewportScroll()
-    const offsetY = [0, 300]
+    const offsetY: number[] = [0, 300]
 
-    const heightSize = [150, 100]
+    const heightSize: number[] = [150, 100]
 
     const height = useTransform(scrollY, offsetY, heightSize)
 
-    const toggleDrawer = () => {
-        setOpen((prevState) => !prevState)
+    const toggleDrawer = (): void => {
+        setOpen((prevState: boolean) => !prevState)
     }
 
-    const changePanelOnClose = () => {
+    const changePanelOnClose = (): void => {
         setTimeout(() => setActivePanel(true), 500)
     }
 

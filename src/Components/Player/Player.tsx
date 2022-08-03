@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import ReactPlayer from 'react-player'
 import './Player.scss'
 
@@ -7,7 +7,7 @@ interface PlayerProps {
     ClosePopUp: Function
 }
 
-const Player = ({ popUpOpen, ClosePopUp }: PlayerProps) => {
+const Player: FC<PlayerProps> = ({ popUpOpen, ClosePopUp }) => {
     return (
         <div
             className="player"

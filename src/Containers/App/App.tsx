@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, FC } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Player from '../../Components/Player/Player'
 import Welcome from '../../Components/Welcome/Welcome'
@@ -6,14 +6,14 @@ import Backdrop from '../../Components/Backdrop/Backdrop'
 import NavBar from '../../Components/NavBar/NavBar'
 import Advantages from '../../Components/Advantages/Advantages'
 
-const App = () => {
-    const [popUpOpen, setPopUpOpen] = useState(false)
+const App: FC = () => {
+    const [popUpOpen, setPopUpOpen] = useState<boolean>(false)
 
-    const OpenPopUp = () => {
+    const OpenPopUp = (): void => {
         setPopUpOpen(true)
     }
 
-    const ClosePopUp = () => {
+    const ClosePopUp = (): void => {
         setPopUpOpen(false)
     }
 
@@ -37,7 +37,6 @@ const App = () => {
                                             ClosePopUp={ClosePopUp}
                                         />
                                     }
-                                    popUpOpen={popUpOpen}
                                     ClosePopUp={ClosePopUp}
                                 />
                             ) : null}

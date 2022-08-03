@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { FC } from 'react'
 import './Advantages.scss'
 
-const Advantages = () => {
+const Advantages: FC = () => {
     return (
         <div className="advantages">
             <div className="advantages-return">
                 <img
                     className="advantages-return-img advantages-img"
                     src="https://i.ibb.co/MRMdQF4/return.png"
-                    alt="30-days return image"
+                    alt="30-days return"
                 />
                 <h2 className="advantages-return-title advantages-title">
                     30 days return

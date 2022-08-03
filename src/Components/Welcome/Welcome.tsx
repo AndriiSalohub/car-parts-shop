@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import { motion } from 'framer-motion'
 import './Welcome.scss'
 
@@ -6,7 +6,7 @@ interface WelcomeProp {
     OpenPopUp: Function
 }
 
-const Welcome = ({ OpenPopUp }: WelcomeProp) => {
+const Welcome: FC<WelcomeProp> = ({ OpenPopUp }) => {
     return (
         <div className="welcome">
             <motion.div
