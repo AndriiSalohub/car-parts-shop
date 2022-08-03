@@ -18,4 +18,4 @@ const popUpSlice = createSlice({
 })
 
 export const { setPopUpOpen, setPopUpClose } = popUpSlice.actions
-export default popUpSlice
+export default popUpSlice.reducer
