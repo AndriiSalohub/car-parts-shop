@@ -1,13 +1,16 @@
 import React, { FC } from 'react'
 import ReactPlayer from 'react-player'
+import { useDispatch, useSelector } from 'react-redux'
+import { setPopUpClose } from '../../Features/PopUp/popUpSlice'
+import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
 import './Player.scss'
 
-interface PlayerProps {
-    popUpOpen: Boolean
-    ClosePopUp: Function
-}
+const Player: FC = () => {
+    const dispatch = useAppDispatch()
+    const popUpOpen = useAppSelector((state) => state.popUp.isOpen)
 
-const Player: FC<PlayerProps> = ({ popUpOpen, ClosePopUp }) => {
+    console.log(popUpOpen)
+
     return (
         <div
             className="player"
@@ -20,7 +23,10 @@ const Player: FC<PlayerProps> = ({ popUpOpen, ClosePopUp }) => {
                 width="800px"
                 height="500px"
             />
-            <button className="player-close-btn" onClick={() => ClosePopUp()}>
+            <button
+                className="player-close-btn"
+                onClick={() => dispatch(setPopUpClose())}
+            >
                 x
             </button>
         </div>

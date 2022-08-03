@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 import { motion } from 'framer-motion'
 import './Welcome.scss'
+import { useAppDispatch } from '../../Hooks/hooks'
+import { setPopUpOpen } from '../../Features/PopUp/popUpSlice'
 
-interface WelcomeProp {
-    OpenPopUp: Function
-}
+const Welcome: FC = () => {
+    const dispatch = useAppDispatch()
 
-const Welcome: FC<WelcomeProp> = ({ OpenPopUp }) => {
     return (
         <div className="welcome">
             <motion.div
@@ -60,7 +60,7 @@ const Welcome: FC<WelcomeProp> = ({ OpenPopUp }) => {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 1, duration: 0.5 }}
                     className="welcome-popup-video-btn"
-                    onClick={() => OpenPopUp()}
+                    onClick={() => dispatch(setPopUpOpen())}
                 ></motion.button>
             </motion.div>
         </div>
