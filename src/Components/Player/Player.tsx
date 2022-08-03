@@ -6,8 +6,8 @@ import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
 import './Player.scss'
 
 const Player: FC = () => {
-    const dispatch = useAppDispatch()
-    const popUpOpen = useAppSelector((state) => state.popUp.isOpen)
+    const dispatch: Function = useAppDispatch()
+    const popUpOpen: Boolean = useAppSelector((state) => state.popUp.isOpen)
 
     console.log(popUpOpen)
 

@@ -8,7 +8,7 @@ import Advantages from '../../Components/Advantages/Advantages'
 import { useAppSelector } from '../../Hooks/hooks'
 
 const App: FC = () => {
-    const popUpOpen = useAppSelector((state) => state.popUp.isOpen)
+    const popUpOpen: Boolean = useAppSelector((state) => state.popUp.isOpen)
 
     popUpOpen
         ? (document.body.style.overflow = 'hidden')

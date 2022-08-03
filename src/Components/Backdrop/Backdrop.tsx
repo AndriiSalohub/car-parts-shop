@@ -9,7 +9,7 @@ interface BackdropProps {
 }
 
 const Backdrop: FC<BackdropProps> = ({ children }) => {
-    const dispatch = useAppDispatch()
+    const dispatch: Function = useAppDispatch()
 
     return (
         <motion.div

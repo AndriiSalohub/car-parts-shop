@@ -5,7 +5,7 @@ import { useAppDispatch } from '../../Hooks/hooks'
 import { setPopUpOpen } from '../../Features/PopUp/popUpSlice'
 
 const Welcome: FC = () => {
-    const dispatch = useAppDispatch()
+    const dispatch: Function = useAppDispatch()
 
     return (
         <div className="welcome">
