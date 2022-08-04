@@ -13,7 +13,7 @@ const NavBar: FC = () => {
     const { scrollY } = useViewportScroll()
     const offsetY: number[] = [0, 300]
 
-    const heightSize: number[] = [150, 100]
+    const heightSize: number[] = [120, 100]
 
     const height = useTransform(scrollY, offsetY, heightSize)
 

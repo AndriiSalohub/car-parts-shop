@@ -9,10 +9,10 @@ export const getParts = createAsyncThunk(
     'parts/getParts',
     async (_, { rejectWithValue, dispatch }) => {
         const res = await axios.get(
-            'https://jsonplaceholder.typicode.com/todos'
+            'https://run.mocky.io/v3/47815820-24a7-43c1-8a61-80e7f4351f0c'
         )
 
-        dispatch(setParts(res.data))
+        dispatch(setParts(res.data.parts))
     }
 )
 const partsSlice = createSlice({

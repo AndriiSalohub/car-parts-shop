@@ -1,18 +1,17 @@
-import React, { useState, FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Player from '../../Components/Player/Player'
-import Welcome from '../../Components/Welcome/Welcome'
-import Backdrop from '../../Components/Backdrop/Backdrop'
-import NavBar from '../../Components/NavBar/NavBar'
-import Advantages from '../../Components/Advantages/Advantages'
-import { useAppSelector } from '../../Hooks/hooks'
+import { getParts } from '../../Features/Parts/parts'
+import { useAppDispatch } from '../../Hooks/hooks'
+import Header from '../Header/Header'
+import Main from '../Main/Main'
 
 const App: FC = () => {
-    const popUpOpen: Boolean = useAppSelector((state) => state.popUp.isOpen)
+    const dispatch = useAppDispatch()
 
-    popUpOpen
-        ? (document.body.style.overflow = 'hidden')
-        : (document.body.style.overflow = 'auto')
+    useEffect(() => {
+        dispatch(getParts())
+    })
+
     return (
         <>
             <Routes>
@@ -20,12 +19,8 @@ const App: FC = () => {
                     path="/"
                     element={
                         <>
-                            <NavBar />
-                            <Welcome />
-                            {popUpOpen ? (
-                                <Backdrop children={<Player />} />
-                            ) : null}
-                            <Advantages />
+                            <Header />
+                            <Main />
                         </>
                     }
                 />

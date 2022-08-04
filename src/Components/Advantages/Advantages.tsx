@@ -3,7 +3,7 @@ import './Advantages.scss'
 
 const Advantages: FC = () => {
     return (
-        <div className="advantages">
+        <section className="advantages">
             <div className="advantages-return">
                 <img
                     className="advantages-return-img advantages-img"
@@ -58,7 +58,7 @@ const Advantages: FC = () => {
                     Vivamus in diam turpis. In condi mentum maximus tristique.
                 </p>
             </div>
-        </div>
+        </section>
     )
 }
 
