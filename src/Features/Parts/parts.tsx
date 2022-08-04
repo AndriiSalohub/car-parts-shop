@@ -9,7 +9,7 @@ export const getParts = createAsyncThunk(
     'parts/getParts',
     async (_, { rejectWithValue, dispatch }) => {
         const res = await axios.get(
-            'https://run.mocky.io/v3/47815820-24a7-43c1-8a61-80e7f4351f0c'
+            'https://run.mocky.io/v3/47ae7131-bdb9-4fb7-8e4f-cf781d8e0a7c'
         )
 
         dispatch(setParts(res.data.parts))
