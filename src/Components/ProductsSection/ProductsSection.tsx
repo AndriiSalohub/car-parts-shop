@@ -1,4 +1,6 @@
 import React, { FC } from 'react'
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import './ProductsSection.scss'
 
 interface ProductsSectionProps {
@@ -33,8 +35,9 @@ const ProductsSection: FC<ProductsSectionProps> = ({
         <div className="products-section">
             <div className="products-section-information">
                 <h2 className="products-section-title">{sectionTitle}</h2>
+
                 <button className="products-section-btn">
-                    SEE ALL PRODUCTS &#62;
+                    <Link to="cart"> SEE ALL PRODUCTS &#62;</Link>
                 </button>
             </div>
             <div className="products-section-products">
@@ -77,7 +80,15 @@ const ProductItem: FC<ProductItemProps> = ({
 }) => {
     return (
         <div className="product-item">
-            <img src={image} alt={title} className="product-item-img" />
+            <div className="product-item-img-container">
+                {' '}
+                <motion.img
+                    src={image}
+                    alt={title}
+                    whileHover={{ scale: 1.2 }}
+                    className="product-item-img"
+                />
+            </div>
             <h2 className="product-item-title">{title}</h2>
             {discount ? (
                 <p className="product-item-price">
