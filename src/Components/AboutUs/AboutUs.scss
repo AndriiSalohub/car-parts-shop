@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.about-us {
+    background-color: #f7f8fa;
+    padding: 100px 30px 200px 30px;
+    &-information {
+        &-icon {
+            display: inline-block;
+            background-color: #111111;
+            color: #fff;
+            border-radius: 15px 0 15px 15px;
+            padding: 5px 15px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+        &-title {
+            font-size: 27px;
+            line-height: 33px;
+            font-family: 'Comfortaa', cursive;
+            margin-bottom: 30px;
+        }
+        &-more-btn {
+            background-color: #ff5f1e;
+            border: none;
+            outline: none;
+            border-radius: 48px;
+            width: 240px;
+            padding: 20px 20px 20px 20px;
+            font-size: 15px;
+            margin-top: 20px;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            & a {
+                text-decoration: none;
+                color: #ffffff;
+            }
+        }
+    }
+
+    &-images {
+        &-img {
+            width: 100%;
+            margin-top: 40px;
+        }
+    }
+
+    &-missions {
+        color: #2b2b2b;
+        font-family: 'Inter', sans-serif;
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (min-width: 768px) {
+    .about-us {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+
+        &-information {
+            &-icon {
+                border-radius: 20px 0 20px 20px;
+                padding: 10px 25px;
+            }
+            &-title {
+                font-size: 38px;
+                line-height: 47px;
+            }
+        }
+
+        &-missions {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .about-us {
+        &-information {
+            &-icon {
+                border-radius: 20px 0 20px 20px;
+                padding: 10px 25px;
+            }
+            &-title {
+                font-size: 45px;
+                line-height: 55px;
+            }
+
+            &-more-btn {
+                color: #ffffff;
+                background-color: #ff5f1e;
+                border: none;
+                outline: none;
+                border-radius: 48px;
+                width: 340px;
+                padding: 20px 20px 20px 20px;
+                font-size: 15px;
+                margin-top: 20px;
+                font-family: 'Inter', sans-serif;
+                cursor: pointer;
+                font-size: 20px;
+            }
+        }
+
+        &-missions {
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .about-us {
+        padding: 100px 120px 200px 120px;
+        &-information {
+            &-icon {
+                border-radius: 20px 0 20px 20px;
+                padding: 10px 25px;
+            }
+            &-title {
+                font-size: 45px;
+                line-height: 55px;
+            }
+
+            &-more-btn {
+                color: #ffffff;
+                background-color: #ff5f1e;
+                border: none;
+                outline: none;
+                border-radius: 48px;
+                width: 340px;
+                padding: 20px 20px 20px 20px;
+                font-size: 15px;
+                margin-top: 20px;
+                font-family: 'Inter', sans-serif;
+                cursor: pointer;
+                font-size: 20px;
+            }
+        }
+
+        &-missions {
+            font-size: 18px;
+            line-height: 25px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media (min-width: 1660px) {
+    .about-us {
+        padding: 100px 240px 200px 240px;
+    }
+}
