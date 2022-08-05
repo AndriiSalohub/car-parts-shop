@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.our-contacts {
+    position: absolute;
+    padding: 80px 8% 65px;
+    background-image: url('https://themes.muffingroup.com/be/carparts/wp-content/uploads/2020/09/carparts-wrapbg1.png');
+    margin-right: 30px;
+    background-color: #ff6f24;
+    bottom: -200px;
+    &-icon {
+        display: inline-block;
+        background-color: #111111;
+        color: #fff;
+        border-radius: 15px 0 15px 15px;
+        padding: 5px 15px;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 20px;
+    }
+    &-phone-number {
+        color: #fff;
+        font-size: 27px;
+        line-height: 33px;
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 20px;
+    }
+    &-title {
+        font-size: 13px;
+        line-height: 19px;
+        letter-spacing: 1px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        text-align: center;
+    }
+    &-work-time {
+        color: #fff;
+        font-size: 13px;
+        line-height: 19px;
+        letter-spacing: 1px;
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .our-contacts {
+        left: 50%;
+        transform: translate(-50%, 0%);
+        width: 90%;
+        &-icon {
+            display: block;
+            background-color: #111111;
+            color: #fff;
+            border-radius: 15px 0 15px 15px;
+            padding: 5px 15px;
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            margin: 0 auto 20px auto;
+            width: 400px;
+        }
+        &-phone-number {
+            text-align: center;
+            font-size: 38px;
+            line-height: 47px;
+        }
+        &-title {
+            font-size: 16px;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .our-contacts {
+        width: 80%;
+        &-phone-number {
+            font-size: 45px;
+            line-height: 55px;
+        }
+        &-title {
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media (min-width: 1660px) {
+    .our-contacts {
+        width: 60%;
+        &-phone-number {
+            font-size: 45px;
+            line-height: 55px;
+        }
+        &-title {
+            margin-bottom: 10px;
+        }
+    }
+}
