@@ -4,6 +4,7 @@ import Advantages from '../../Components/Advantages/Advantages'
 import LatestProducts from '../../Components/LatestProducts/LatestProducts'
 import OurContacts from '../../Components/OurContacts/OurContacts'
 import SalesProducts from '../../Components/SalesProducts/SalesProducts'
+import UsefulInformation from '../../Components/UsefulInformation/UsefulInformation'
 
 const Main: FC = () => {
     return (
@@ -15,6 +16,7 @@ const Main: FC = () => {
                 {' '}
                 <OurContacts />
             </AboutUs>
+            <UsefulInformation />
         </main>
     )
 }

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Inter&family=Roboto:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.useful-information {
+    background-color: #111111;
+    padding: 250px 30px 100px 30px;
+    &-contacts {
+        color: #cccccc;
+        text-align: center;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        line-height: 20px;
+        &-description {
+            margin-bottom: 15px;
+        }
+        &-phonenumber {
+            margin-bottom: 5px;
+        }
+        &-email {
+            margin-bottom: 50px;
+        }
+    }
+    &-title {
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 700;
+        font-family: 'Roboto', sans-serif;
+        margin-bottom: 20px;
+    }
+    &-list-item {
+        text-align: center;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+        margin-bottom: 5px;
+        font-size: 14px;
+        & a {
+            color: #898989;
+            text-decoration: none;
+        }
+        & span {
+            color: #898989;
+            margin-right: 5px;
+        }
+        &:last-child {
+            margin-bottom: 30px;
+        }
+        &:hover {
+            text-decoration: underline;
+            & a {
+                color: #ff5f1e;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .useful-information {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 15px;
+        &-contacts {
+            grid-row: 1/3;
+            font-size: 15px;
+            line-height: 25px;
+            text-align: left;
+            &-description {
+                margin-bottom: 15px;
+            }
+            &-phonenumber {
+                margin-bottom: 5px;
+            }
+            &-email {
+                margin-bottom: 50px;
+            }
+        }
+        &-customer-service {
+            grid-column: 3/4;
+            grid-row: 1/3;
+        }
+        &-title {
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        &-list-item {
+            text-align: left;
+            margin-bottom: 10px;
+            font-size: 15px;
+            & span {
+                margin-right: 7px;
+            }
+            &:last-child {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .useful-information {
+        padding: 250px 60px 100px 60px;
+        &-title {
+            color: #fff;
+            text-align: left;
+            font-size: 15px;
+        }
+        &-list-item {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+@media (min-width: 1440px) {
+    .useful-information {
+        padding: 250px 120px 100px 120px;
+        grid-gap: 30px;
+        &-contacts {
+            padding-right: 30px;
+            font-size: 17px;
+            padding-left: 25px;
+        }
+    }
+}
+
+@media (min-width: 1660px) {
+    .useful-information {
+        padding: 250px 240px 100px 240px;
+        grid-gap: 30px;
+        &-contacts {
+            padding-left: 130px;
+            font-size: 17px;
+        }
+    }
+}

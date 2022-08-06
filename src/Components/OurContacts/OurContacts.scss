@@ -10,7 +10,7 @@
     background-image: url('https://themes.muffingroup.com/be/carparts/wp-content/uploads/2020/09/carparts-wrapbg1.png');
     margin-right: 30px;
     background-color: #ff6f24;
-    bottom: -200px;
+    bottom: -175px;
     &-icon {
         display: inline-block;
         background-color: #111111;
@@ -53,6 +53,7 @@
         left: 50%;
         transform: translate(-50%, 0%);
         width: 90%;
+        bottom: -140px;
         &-icon {
             display: block;
             background-color: #111111;
@@ -78,6 +79,7 @@
 @media (min-width: 1440px) {
     .our-contacts {
         width: 80%;
+        bottom: -150px;
         &-phone-number {
             font-size: 45px;
             line-height: 55px;

@@ -6,7 +6,7 @@
 
 .about-us {
     background-color: #f7f8fa;
-    padding: 100px 30px 200px 30px;
+    padding: 100px 30px 250px 30px;
     position: relative;
     &-information {
         &-icon {
@@ -121,7 +121,7 @@
 
 @media (min-width: 1440px) {
     .about-us {
-        padding: 100px 120px 200px 120px;
+        padding: 100px 120px 250px 120px;
         &-information {
             &-icon {
                 border-radius: 20px 0 20px 20px;
@@ -158,6 +158,6 @@
 
 @media (min-width: 1660px) {
     .about-us {
-        padding: 100px 240px 200px 240px;
+        padding: 100px 240px 250px 240px;
     }
 }

@@ -9,7 +9,7 @@ interface AboutUsProps {
 const AboutUs: FC<AboutUsProps> = ({ children }) => {
     return (
         <>
-            <div className="about-us">
+            <section className="about-us">
                 <div className="about-us-information">
                     <div className="about-us-information-icon">HOW WE WORK</div>
                     <h2 className="about-us-information-title">
@@ -49,7 +49,7 @@ const AboutUs: FC<AboutUsProps> = ({ children }) => {
                     />
                 </div>
                 {children}
-            </div>
+            </section>
         </>
     )
 }
