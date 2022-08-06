@@ -6,7 +6,7 @@
 
 .useful-information {
     background-color: #111111;
-    padding: 250px 30px 100px 30px;
+    padding: 250px 30px 50px 30px;
     &-contacts {
         color: #cccccc;
         text-align: center;
@@ -102,7 +102,7 @@
 
 @media (min-width: 1024px) {
     .useful-information {
-        padding: 250px 60px 100px 60px;
+        padding: 250px 60px 50px 60px;
         &-title {
             color: #fff;
             text-align: left;
@@ -117,7 +117,7 @@
 
 @media (min-width: 1440px) {
     .useful-information {
-        padding: 250px 120px 100px 120px;
+        padding: 250px 120px 50px 120px;
         grid-gap: 30px;
         &-contacts {
             padding-right: 30px;
@@ -129,7 +129,7 @@
 
 @media (min-width: 1660px) {
     .useful-information {
-        padding: 250px 240px 100px 240px;
+        padding: 250px 240px 50px 240px;
         grid-gap: 30px;
         &-contacts {
             padding-left: 130px;
