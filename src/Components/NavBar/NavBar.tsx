@@ -49,27 +49,74 @@ const NavBar: FC = () => {
                         <li className="menu-laptop-nav-bar-list-item">
                             <NavLink
                                 to="/"
-                                style={(isActive) => ({
-                                    color: isActive ? '#ff5f1c' : 'white',
+                                style={(navData) => ({
+                                    color: navData.isActive
+                                        ? '#ff5f1c'
+                                        : 'white',
                                 })}
                             >
                                 HOME
                             </NavLink>
                         </li>
                         <li className="menu-laptop-nav-bar-list-item">
-                            <NavLink to="/about">ABOUT</NavLink>
+                            <NavLink
+                                to="/about"
+                                style={(navData) => ({
+                                    color: navData.isActive
+                                        ? '#ff5f1c'
+                                        : 'white',
+                                })}
+                            >
+                                ABOUT
+                            </NavLink>
                         </li>
                         <li className="menu-laptop-nav-bar-list-item">
-                            <NavLink to="/categories">CATEGORIES</NavLink>
+                            <NavLink
+                                to="/categories"
+                                style={(navData) => ({
+                                    color: navData.isActive
+                                        ? '#ff5f1c'
+                                        : 'white',
+                                })}
+                            >
+                                CATEGORIES
+                            </NavLink>
                         </li>
                         <li className="menu-laptop-nav-bar-list-item">
-                            <NavLink to="/shop">SHOP</NavLink>
+                            <NavLink
+                                to="/shop"
+                                style={(navData) => ({
+                                    color: navData.isActive
+                                        ? '#ff5f1c'
+                                        : 'white',
+                                })}
+                            >
+                                SHOP
+                            </NavLink>
                         </li>
                         <li className="menu-laptop-nav-bar-list-item">
-                            <NavLink to="/contact">CONTACT</NavLink>
+                            <NavLink
+                                to="/contact"
+                                style={(navData) => ({
+                                    color: navData.isActive
+                                        ? '#ff5f1c'
+                                        : 'white',
+                                })}
+                            >
+                                CONTACT
+                            </NavLink>
                         </li>
                         <li className="menu-laptop-nav-bar-list-item buy-now">
-                            <NavLink to="/but-now">BUY NOW</NavLink>
+                            <NavLink
+                                to="/but-now"
+                                style={(navData) => ({
+                                    color: navData.isActive
+                                        ? '#ff5f1c'
+                                        : 'white',
+                                })}
+                            >
+                                BUY NOW
+                            </NavLink>
                         </li>
                     </ul>
                 </nav>
@@ -161,27 +208,74 @@ const NavBar: FC = () => {
                             <li className="menu-drawer-nav-bar-list-item">
                                 <NavLink
                                     to="/"
-                                    style={(isActive) => ({
-                                        color: isActive ? 'white' : '#a6a6a6',
+                                    style={(navData) => ({
+                                        color: navData.isActive
+                                            ? 'white'
+                                            : '#a6a6a6',
                                     })}
                                 >
                                     HOME
                                 </NavLink>
                             </li>
                             <li className="menu-drawer-nav-bar-list-item">
-                                <NavLink to="/about">ABOUT</NavLink>
+                                <NavLink
+                                    to="/about"
+                                    style={(navData) => ({
+                                        color: navData.isActive
+                                            ? 'white'
+                                            : '#a6a6a6',
+                                    })}
+                                >
+                                    ABOUT
+                                </NavLink>
                             </li>
                             <li className="menu-drawer-nav-bar-list-item">
-                                <NavLink to="/categories">CATEGORIES</NavLink>
+                                <NavLink
+                                    to="/categories"
+                                    style={(navData) => ({
+                                        color: navData.isActive
+                                            ? 'white'
+                                            : '#a6a6a6',
+                                    })}
+                                >
+                                    CATEGORIES
+                                </NavLink>
                             </li>
                             <li className="menu-drawer-nav-bar-list-item">
-                                <NavLink to="/shop">SHOP</NavLink>
+                                <NavLink
+                                    to="/shop"
+                                    style={(navData) => ({
+                                        color: navData.isActive
+                                            ? 'white'
+                                            : '#a6a6a6',
+                                    })}
+                                >
+                                    SHOP
+                                </NavLink>
                             </li>
                             <li className="menu-drawer-nav-bar-list-item">
-                                <NavLink to="/contact">CONTACT</NavLink>
+                                <NavLink
+                                    to="/contact"
+                                    style={(navData) => ({
+                                        color: navData.isActive
+                                            ? 'white'
+                                            : '#a6a6a6',
+                                    })}
+                                >
+                                    CONTACT
+                                </NavLink>
                             </li>
                             <li className="menu-drawer-nav-bar-list-item">
-                                <NavLink to="/but-now">BUY NOW</NavLink>
+                                <NavLink
+                                    to="/but-now"
+                                    style={(navData) => ({
+                                        color: navData.isActive
+                                            ? 'white'
+                                            : '#a6a6a6',
+                                    })}
+                                >
+                                    BUY NOW
+                                </NavLink>
                             </li>
                         </ul>
                     </nav>

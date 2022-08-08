@@ -2,9 +2,8 @@ import React, { FC, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { getParts } from '../../Features/Parts/parts'
 import { useAppDispatch } from '../../Hooks/hooks'
-import Footer from '../Footer/Footer'
-import Header from '../Header/Header'
-import Main from '../Main/Main'
+import AboutPage from '../../Pages/AboutPage'
+import HomePage from '../../Pages/HomePage'
 
 const App: FC = () => {
     const dispatch = useAppDispatch()
@@ -16,16 +15,8 @@ const App: FC = () => {
     return (
         <>
             <Routes>
-                <Route
-                    path="/"
-                    element={
-                        <>
-                            <Header />
-                            <Main />
-                            <Footer />
-                        </>
-                    }
-                />
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<AboutPage />} />
             </Routes>
         </>
     )
