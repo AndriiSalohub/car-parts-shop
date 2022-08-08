@@ -1,18 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import axios from 'axios'
+import { collection, getDocs } from '@firebase/firestore'
+import db from '../../firebase'
 
 const initialState = {
     parts: [],
 }
 
+const partsCollectionRef = collection(db, 'parts')
+
 export const getParts = createAsyncThunk(
     'parts/getParts',
     async (_, { rejectWithValue, dispatch }) => {
-        const res = await axios.get(
-            'https://run.mocky.io/v3/47ae7131-bdb9-4fb7-8e4f-cf781d8e0a7c'
-        )
+        const data = await getDocs(partsCollectionRef)
 
-        dispatch(setParts(res.data.parts))
+        dispatch(
+            setParts(
+                data.docs.map((doc) => ({
+                    ...doc.data(),
+                }))
+            )
+        )
     }
 )
 const partsSlice = createSlice({

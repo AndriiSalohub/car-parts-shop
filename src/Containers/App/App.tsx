@@ -11,7 +11,7 @@ const App: FC = () => {
 
     useEffect(() => {
         dispatch(getParts())
-    })
+    }, [])
 
     return (
         <>

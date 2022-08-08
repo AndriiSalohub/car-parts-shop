@@ -1,6 +1,5 @@
 import React, { FC } from 'react'
 import ReactPlayer from 'react-player'
-import { useDispatch, useSelector } from 'react-redux'
 import { setPopUpClose } from '../../Features/PopUp/popUpSlice'
 import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
 import './Player.scss'
