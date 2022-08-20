@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { FC } from 'react'
 import NavBar from '../Components/NavBar/NavBar'
 import Welcome from '../Components/Welcome/Welcome'
 import Player from '../Components/Player/Player'
@@ -12,7 +12,7 @@ import OurContacts from '../Components/OurContacts/OurContacts'
 import UsefulInformation from '../Components/UsefulInformation/UsefulInformation'
 import Footer from '../Components/Footer/Footer'
 
-const HomePage = () => {
+const HomePage: FC = () => {
     const popUpOpen: Boolean = useAppSelector((state) => state.popUp.isOpen)
 
     popUpOpen
