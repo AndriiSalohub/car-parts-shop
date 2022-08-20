@@ -1,8 +1,7 @@
 import React, { FC } from 'react'
-import ContactBoard from '../Components/ContactBoard/ContactBoard'
+import Boards from '../Components/Boards/Boards'
 import Footer from '../Components/Footer/Footer'
 import NavBar from '../Components/NavBar/NavBar'
-import OurContacts from '../Components/OurContacts/OurContacts'
 import UsefulInformation from '../Components/UsefulInformation/UsefulInformation'
 
 const ContactPage: FC = () => {
@@ -10,7 +9,7 @@ const ContactPage: FC = () => {
         <>
             <header>
                 <NavBar />
-                <ContactBoard />
+                <Boards title="contact with us" boardName="contact" />
             </header>
 
             <main>

@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 
-.contact-board{
+.boards{
     &-title{
         color: #fff;
         font-size: 51px;
@@ -24,14 +24,22 @@
         height: 500px;
         width: 100%;
         background-color: #111111;
-        background-image: url(https://themes.muffingroup.com/be/carparts/wp-content/uploads/2020/09/carparts-sectionbg4.jpg);
         background-repeat: no-repeat;
         background-position: center bottom;
     }
 }
 
+.about-board{
+    background-image: url(https://themes.muffingroup.com/be/carparts/wp-content/uploads/2020/09/carparts-sectionbg3.jpg);
+}
+
+.contact-board{
+    background-image: url(https://themes.muffingroup.com/be/carparts/wp-content/uploads/2020/09/carparts-sectionbg4.jpg);
+}
+
+
 @media(min-width: 768px){
-    .contact-board{
+    .boards{
         &-title{
             padding: 0 60px;
             font-size: 72px;
@@ -41,7 +49,7 @@
 }
 
 @media(min-width: 1024px){
-    .contact-board{
+    .boards{
         &-title{
             padding: 0 75px;
             font-size: 85px;
@@ -53,7 +61,7 @@
 
 
 @media(min-width: 1440px){
-    .contact-board{
+    .boards{
         &-title{
             top: 30%;
             transform: translateY(-30%);
@@ -66,7 +74,7 @@
 
 
 @media(min-width: 1660px){
-    .contact-board{
+    .boards{
         &-title{
             padding: 0 300px;
             font-size: 90px;

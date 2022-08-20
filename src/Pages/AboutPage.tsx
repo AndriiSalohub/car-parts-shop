@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import AboutBoard from '../Components/AboutBoard/AboutBoard'
+import Boards from '../Components/Boards/Boards'
 import Footer from '../Components/Footer/Footer'
 import NavBar from '../Components/NavBar/NavBar'
 
@@ -8,7 +8,7 @@ const AboutPage: FC = () => {
         <>
             <header>
                 <NavBar />
-                <AboutBoard />
+                <Boards title="about our shop" boardName="about" />
             </header>
             <Footer />
         </>
