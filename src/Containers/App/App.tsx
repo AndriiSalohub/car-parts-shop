@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { getParts } from '../../Features/Parts/parts'
 import { useAppDispatch } from '../../Hooks/hooks'
+import { getParts } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
 import AboutPage from '../../Pages/AboutPage'
 import ContactPage from '../../Pages/ContactPage'
 import HomePage from '../../Pages/HomePage'

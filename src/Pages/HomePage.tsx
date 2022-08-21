@@ -13,7 +13,7 @@ import UsefulInformation from '../Components/UsefulInformation/UsefulInformation
 import Footer from '../Components/Footer/Footer'
 
 const HomePage: FC = () => {
-    const popUpOpen: Boolean = useAppSelector((state) => state.popUp.isOpen)
+    const popUpOpen: Boolean = useAppSelector((state) => state.popup.isOpen)
 
     popUpOpen
         ? (document.body.style.overflow = 'hidden')

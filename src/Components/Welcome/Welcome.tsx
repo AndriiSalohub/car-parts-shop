@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { motion } from 'framer-motion'
 import './Welcome.scss'
 import { useAppDispatch } from '../../Hooks/hooks'
-import { setPopUpOpen } from '../../Features/PopUp/popUpSlice'
+import { setPopupOpen } from '../../ReduxToolkit/Slices/PopupSlice/PopupSlice'
 
 const Welcome: FC = () => {
     const dispatch: Function = useAppDispatch()
@@ -60,7 +60,7 @@ const Welcome: FC = () => {
                     animate={{ x: 0, opacity: 1 }}
                     transition={{ delay: 1, duration: 0.5 }}
                     className="welcome-popup-video-btn"
-                    onClick={() => dispatch(setPopUpOpen())}
+                    onClick={() => dispatch(setPopupOpen())}
                 ></motion.button>
             </motion.div>
         </div>
