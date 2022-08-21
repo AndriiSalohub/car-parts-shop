@@ -20,12 +20,8 @@ const HomePage: FC = () => {
         : (document.body.style.overflow = 'auto')
     return (
         <>
-            <header>
-                {' '}
-                <NavBar />
-                <Welcome />
-                {popUpOpen ? <Backdrop children={<Player />} /> : null}
-            </header>
+            <NavBar /> <Welcome />
+            {popUpOpen ? <Backdrop children={<Player />} /> : null}
             <main>
                 <Advantages />
                 <LatestProducts />
