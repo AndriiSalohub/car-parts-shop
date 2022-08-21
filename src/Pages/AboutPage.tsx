@@ -6,10 +6,8 @@ import NavBar from '../Components/NavBar/NavBar'
 const AboutPage: FC = () => {
     return (
         <>
-            <header>
-                <NavBar />
-                <Boards title="about our shop" boardName="about" />
-            </header>
+            <NavBar />
+            <Boards title="about our shop" boardName="about" />
             <Footer />
         </>
     )

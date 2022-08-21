@@ -7,15 +7,12 @@ import UsefulInformation from '../Components/UsefulInformation/UsefulInformation
 const ContactPage: FC = () => {
     return (
         <>
-            <header>
-                <NavBar />
-                <Boards title="contact with us" boardName="contact" />
-            </header>
-
+            {' '}
+            <NavBar />
+            <Boards title="contact with us" boardName="contact" />
             <main>
                 <UsefulInformation />
             </main>
-
             <Footer />
         </>
     )

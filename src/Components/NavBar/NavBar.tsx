@@ -27,7 +27,7 @@ const NavBar: FC = () => {
 
     return (
         <>
-            <motion.div className="menu" style={{ height }}>
+            <motion.header className="menu" style={{ height }}>
                 <Link to="/">
                     <img
                         src="https://i.ibb.co/tKmdYGt/logo.png"
@@ -280,7 +280,7 @@ const NavBar: FC = () => {
                         </ul>
                     </nav>
                 </Drawer>
-            </motion.div>
+            </motion.header>
         </>
     )
 }
