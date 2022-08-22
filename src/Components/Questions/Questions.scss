@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.questions{
+    padding: 0 30px 300px 30px;
+    margin-top: 75px;
+    position: relative;
+    &-title{
+        font-size: 27px;
+        line-height: 33px;
+        font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+        margin-bottom: 30px;
+        &-highlight{
+            color: #ff5f1e;
+        }
+    }
+    &-content{
+        &-subtitle{
+            color: #ff5f1e;
+            font-size: 13px;
+            line-height: 19px;
+            font-family: "Inter", Helvetica, Arial, sans-serif;
+            margin-bottom: 15px;
+        }
+        &-address{
+            font-size: 15px;
+            line-height: 21px;
+            font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0,0,0,.08);
+        }
+        &-phone-number{
+            position: relative;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            &-icon{
+                top: 1px;
+            }
+        }
+        &-latters{
+            position: relative;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(0,0,0,.08);
+            &-icon{
+                top: 2px;
+            }
+        }
+        &-icons{
+            position: absolute;
+        }
+        &-text{
+            font-size: 13px;
+            line-height: 19px;
+            font-family: "Inter", Helvetica, Arial, sans-serif;
+            margin-left: 25px;
+        }
+        &-work-time{
+            margin-top: 25px;
+            margin-bottom: 40px;
+            &-text{
+                font-size: 13px;
+                line-height: 19px;
+                font-family: "Inter", Helvetica, Arial, sans-serif;
+                &-time{
+                    display: block;
+                    font-weight: 700;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+
+    &-form{
+        &-inputs{
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 18px;
+            outline: none;
+            border: none;
+            background-color: #f4f4f4;
+            font-family: "Inter", Helvetica, Arial, sans-serif;
+            &:focus{
+                border: 1px solid #ff5f1e;
+                background-color: rgba(255, 255, 255, 0);
+            }
+        }
+        &-btn{
+            color: #fff;
+            font-weight: 700;
+            font-family: "Inter", Helvetica, Arial, sans-serif;
+            background-color: #ff5f1e;
+            border-radius: 24px;
+            padding: 15px;
+            width: 100%;
+            outline: none;
+            border: none;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .questions{
+        padding: 0 60px 250px 60px;
+        grid-gap: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-row: 1fr 10fr;
+        &-title{
+            grid-column: 1/3;
+            font-size: 38px;
+            line-height: 47px;
+        }
+        &-content{
+            &-address{
+                font-size: 21px;
+                line-height: 30px;
+            }
+            &-phone-number{
+                &-icon{
+                    top: 5px;
+                }
+            }
+            &-latters{
+                &-icon{
+                    top: 5px;
+                }
+            }
+            &-text{
+                font-size: 18px;
+                line-height: 26px;
+            }
+            &-work-time{
+                &-text{
+                    font-size: 14px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .questions{
+        padding: 0 75px 250px 75px;
+        &-title{
+            font-size: 45px;
+            line-height: 55px;
+        }
+        &-content{
+            &-address{
+                font-size: 25px;
+                line-height: 35px;
+            }
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .questions{
+        padding: 0 100px 300px 100px;
+    }
+}
+
+@media(min-width: 1660px){
+    .questions{
+        padding: 0 300px 300px 300px;
+    }
+}
