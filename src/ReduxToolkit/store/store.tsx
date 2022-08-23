@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import PopupSlice from '../Slices/PopupSlice/PopupSlice'
 import PartsSlice from '../Slices/PartsSlice/PartsSlice'
+import FaqSlice from '../Slices/FaqSlice/FaqSlice'
 
 const store = configureStore({
     reducer: {
         popup: PopupSlice,
         parts: PartsSlice,
+        faq: FaqSlice,
     },
 })
 

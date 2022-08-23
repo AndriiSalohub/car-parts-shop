@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import ReactPlayer from 'react-player'
 import NavBar from '../Components/NavBar/NavBar'
 import Welcome from '../Components/Welcome/Welcome'
 import Player from '../Components/Player/Player'
@@ -21,7 +22,23 @@ const HomePage: FC = () => {
     return (
         <>
             <NavBar /> <Welcome />
-            {popUpOpen ? <Backdrop children={<Player />} /> : null}
+            {popUpOpen ? (
+                <Backdrop
+                    children={
+                        <Player
+                            player={
+                                <ReactPlayer
+                                    url="https://www.youtube.com/watch?v=z0jjTU-H43M&ab_channel=MuffinGroup"
+                                    width="800px"
+                                    height="500px"
+                                />
+                            }
+                            videoType="popup"
+                        />
+                    }
+                    videoType="popup"
+                />
+            ) : null}
             <main>
                 <Advantages />
                 <LatestProducts />
