@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.stats{
+    padding: 75px 30px;
+    background-color: #000000;
+    &-title{
+        color: #fff;
+        font-size: 27px;
+        line-height: 33px;
+        font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+        margin-bottom: 30px;
+    }
+    &-list{
+        &-item{
+            padding: 40px 8% 25px;
+            border: 2px solid #ff5f1e;
+            border-radius: 30px;
+            margin-bottom: 15px;
+            &-information{
+                color: #fff;
+                font-size: 27px;
+                line-height: 33px;
+                text-align: center;
+                font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+                margin-bottom: 20px;
+            }
+            &-title{
+                color: #ff5f1e;
+                font-size: 13px;
+                line-height: 19px;
+                text-align: center;
+                font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+            }
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .stats{
+        padding: 75px 60px;
+        &-title{
+            font-size: 38px;
+            line-height: 47px;
+            margin-bottom: 50px;
+        }
+        &-list{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 20px;
+            &-item{
+                &-information{
+                    font-size: 40px;
+                    line-height: 45px;
+                }
+                &-title{
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .stats{
+        padding: 75px;
+        &-title{
+            font-size: 45px;
+            line-height: 55px;
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .stats{
+        padding: 75px 100px 100px 100px;
+    }
+}
+
+@media(min-width: 1440px){
+    .stats{
+        padding: 75px 300px 100px 300px;
+    }
+}
