@@ -5,11 +5,12 @@ $transparent: rgba(255, 255, 255, 0);
     box-sizing: border-box;
 }
 
+
 .player {
     &-close-btn {
         position: absolute;
-        top: 120px;
-        right: 100px;
+        top: 290px;
+        right: 10px;
         outline: none;
         border: none;
         background-color: $transparent;
@@ -17,6 +18,41 @@ $transparent: rgba(255, 255, 255, 0);
         color: #a9a9a9;
         font-family: 'Nunito', sans-serif;
         font-weight: 700;
+        cursor: pointer;
+    }
+}
+
+@media(min-width: 375px){
+    .player {
+        &-close-btn {
+            top: 280px;
+        }
+    }
+}
+
+@media(min-width: 420px){
+    .player {
+        &-close-btn {
+            top: 265px;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .player {
+        &-close-btn {
+            top: 140px;
+            right: 30px;
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .player {
+        &-close-btn {
+            top: 120px;
+            right: 100px;
+        }
     }
 }
 
