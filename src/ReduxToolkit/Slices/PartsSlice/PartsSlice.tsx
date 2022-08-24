@@ -22,6 +22,7 @@ export const getParts = createAsyncThunk(
         )
     }
 )
+
 const partsSlice = createSlice({
     name: 'parts',
     initialState,

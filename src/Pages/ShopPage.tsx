@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import FilterPanel from '../Components/FilterPanel/FilterPanel'
 import Footer from '../Components/Footer/Footer'
 import NavBar from '../Components/NavBar/NavBar'
-import PartsOutput from '../Components/PartsOutpur/PartsOutput'
+import PartsOutput from '../Components/PartsOutput/PartsOutput'
 import Subheader from '../Components/Subheader/Subheader'
 import AnimatedPage from './AnimatedPage'
 
