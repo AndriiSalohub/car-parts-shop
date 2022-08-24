@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.parts-output{
+    padding: 0 30px;
+}
+
+.parts-item{
+    &-img{
+        overflow: hidden;
+        & img{
+            width: 100%;
+            scale: 1;
+            transition: scale .3s ease-in-out;
+            &:hover{
+                scale: 1.1;
+                transition: scale .3s ease-in-out;
+            }
+        }
+    }
+    &-title{
+        font-size: 13px;
+        line-height: 19px;
+        font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+        margin-top: 10px;
+    }
+    &-price{
+        color: #ff5f1e;
+        font-size: 20px;
+        font-family: "Inter", Helvetica, Arial, sans-serif;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        & span{
+            padding-right: 10px;
+        }
+    }
+    &-product-information{
+        font-size: 13px;
+        line-height: 19px;
+        font-family: "Inter", Helvetica, Arial, sans-serif;
+    }
+    &-manufacturer{
+        margin-bottom: 20px;
+    }
+}
+
+@media(min-width: 768px){
+    .parts-output{
+        padding: 0 60px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 20px;
+    }
+
+    .parts-item{
+        &-title{
+            font-size: 18px;
+            line-height: 26px;
+        }
+        &-product-information{
+            font-size: 14px;
+            line-height: 26px;
+        }
+        &-manufacturer{
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .parts-output{
+        padding: 0 75px;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+    .parts-item{
+        &-title{
+            font-size: 21px;
+            line-height: 31px;
+        }
+        &-product-information{
+            font-size: 16px;
+            line-height: 30px;
+        }
+        &-manufacturer{
+            margin-bottom: 20px;
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .parts-output{
+        padding: 0 100px;
+    }
+}
+
+@media(min-width: 1660px){
+    .parts-output{
+        padding: 0 300px;
+    }
+}
