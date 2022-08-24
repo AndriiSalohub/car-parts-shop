@@ -11,6 +11,7 @@ import Player from '../Components/Player/Player'
 import Backdrop from '../Components/Backdrop/Backdrop'
 import OurContacts from '../Components/OurContacts/OurContacts'
 import UsefulInformation from '../Components/UsefulInformation/UsefulInformation'
+import AnimatedPage from './AnimatedPage'
 
 const AboutPage: FC = () => {
     const [windowSize, setWindowSize] = useState(getWindowSize())
@@ -67,7 +68,7 @@ const AboutPage: FC = () => {
         : (document.body.style.overflow = 'auto')
 
     return (
-        <>
+        <AnimatedPage>
             <NavBar />
             <Boards title="about our shop" boardName="about" />
             <main>
@@ -94,7 +95,7 @@ const AboutPage: FC = () => {
                 <UsefulInformation />
             </main>
             <Footer />
-        </>
+        </AnimatedPage>
     )
 }
 

@@ -12,6 +12,7 @@ import AboutUs from '../Components/AboutUs/AboutUs'
 import OurContacts from '../Components/OurContacts/OurContacts'
 import UsefulInformation from '../Components/UsefulInformation/UsefulInformation'
 import Footer from '../Components/Footer/Footer'
+import AnimatedPage from './AnimatedPage'
 
 const HomePage: FC = () => {
     const popUpOpen: Boolean = useAppSelector((state) => state.popup.isOpen)
@@ -20,7 +21,7 @@ const HomePage: FC = () => {
         ? (document.body.style.overflow = 'hidden')
         : (document.body.style.overflow = 'auto')
     return (
-        <>
+        <AnimatedPage>
             <NavBar /> <Welcome />
             {popUpOpen ? (
                 <Backdrop
@@ -47,7 +48,7 @@ const HomePage: FC = () => {
                 <UsefulInformation />
             </main>
             <Footer />
-        </>
+        </AnimatedPage>
     )
 }
 
