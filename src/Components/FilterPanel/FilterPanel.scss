@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.filter-panel{
+    padding: 0 30px;
+    &-background{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 15px 30px;
+        background-image: url(https://themes.muffingroup.com/be/carparts/wp-content/themes/betheme/images/stripes/stripes_5_b.png);
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+    &-result{
+        color: #a8a8a8;
+        font-size: 13px;
+        line-height: 19px;
+        font-family: "Inter", Helvetica, Arial, sans-serif;
+        text-align: center;
+    }
+    &-select{
+        display: block;
+        padding: 10px;
+        margin: 10px auto 0 auto;
+        background-color: #f4f4f4;
+        border-radius: 18px;
+        & option{
+            padding: 10px;
+        }
+        &:focus{
+            background-color: #fff;
+            border: 1px solid #ff5f1e;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .filter-panel{
+        padding: 0 60px;
+        &-background{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            padding: 15px 15px;
+        }
+        &-result{
+            justify-self: start;
+            font-size: 14px;
+            line-height: 26px;
+        }
+        &-select{
+            margin: 0;
+            justify-self: end;
+            padding: 10px 20px;
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .filter-panel{
+        padding: 0 75px;
+        &-background{
+            padding: 30px 15px;
+        }
+        &-result{
+            font-size: 16px;
+            line-height: 30px;
+        }
+        &-select{
+            margin: 0;
+            justify-self: end;
+            padding: 10px 20px;
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .filter-panel{
+        padding: 0 100px;
+    }
+}
+
+
+@media(min-width: 1660px){
+    .filter-panel{
+        padding: 0 300px;
+    }
+}
