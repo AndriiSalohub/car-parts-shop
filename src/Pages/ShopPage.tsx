@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import FilterPanel from '../Components/FilterPanel/FilterPanel'
 import Footer from '../Components/Footer/Footer'
 import NavBar from '../Components/NavBar/NavBar'
 import Subheader from '../Components/Subheader/Subheader'
@@ -9,6 +10,9 @@ const ShopPage: FC = () => {
         <AnimatedPage>
             <NavBar />
             <Subheader pageTitle="our products" />
+            <main>
+                <FilterPanel />
+            </main>
             <Footer />
         </AnimatedPage>
     )
