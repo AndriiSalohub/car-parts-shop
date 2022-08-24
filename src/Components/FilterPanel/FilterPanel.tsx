@@ -1,11 +1,12 @@
-import React, { FC, useState } from 'react'
-import { useAppSelector } from '../../Hooks/hooks'
+import React, { FC } from 'react'
+import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
+import { setFilterTerm } from '../../ReduxToolkit/Slices/FilterSlice/FilterSlice'
 import './FilterPanel.scss'
 
 const FilterPanel: FC = () => {
-    const parts = useAppSelector((state) => state.parts.parts)
+    const dispatch = useAppDispatch()
 
-    const [selectType, setSelectType] = useState('')
+    const parts = useAppSelector((state) => state.parts.parts)
 
     return (
         <section className="filter-panel">
@@ -13,9 +14,12 @@ const FilterPanel: FC = () => {
                 <p className="filter-panel-result">
                     Showing all {Object.keys(parts).length} result
                 </p>
-                <select className="filter-panel-select">
+                <select
+                    className="filter-panel-select"
+                    onChange={(e) => dispatch(setFilterTerm(e.target.value))}
+                >
                     <option value="default sorting">Default sorting</option>
-                    <option value="sorting by popularity">
+                    <option value="sort by popularity">
                         Sort by popularity
                     </option>
                     <option value="sort by average rating">
