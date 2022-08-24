@@ -107,16 +107,13 @@ const NavBar: FC = () => {
                             </NavLink>
                         </li>
                         <li className="menu-laptop-nav-bar-list-item buy-now">
-                            <NavLink
-                                to="/but-now"
-                                style={(navData) => ({
-                                    color: navData.isActive
-                                        ? '#ff5f1c'
-                                        : 'white',
-                                })}
+                            <a
+                                href="https://themeforest.net/item/betheme-responsive-multipurpose-wordpress-theme/7758048?ref=muffingroup&irgwc=1&clickid=VKtTUmX0MxyIWlszN%3A0wnXCVUkD2Wx3T22cJU00&iradid=275988&irpid=1289117&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_1289117&utm_medium=affiliate&utm_source=impact_radius"
+                                target="_blank"
+                                rel="noreferrer"
                             >
                                 BUY NOW
-                            </NavLink>
+                            </a>
                         </li>
                     </ul>
                 </nav>
