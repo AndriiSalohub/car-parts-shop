@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect, useLayoutEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { useAppDispatch } from '../../Hooks/hooks'
 import { getParts } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
@@ -16,6 +16,10 @@ const App: FC = () => {
         dispatch(getParts())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
+
+    useLayoutEffect(() => {
+        window.scrollTo(0, 0)
+    })
 
     const location = useLocation()
 
