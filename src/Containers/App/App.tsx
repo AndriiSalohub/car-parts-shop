@@ -8,12 +8,14 @@ import ContactPage from '../../Pages/ContactPage'
 import HomePage from '../../Pages/HomePage'
 import CategoriesPage from '../../Pages/CategoriesPage'
 import ShopPage from '../../Pages/ShopPage'
+import { getFilterTerm } from '../../ReduxToolkit/Slices/FilterSlice/FilterSlice'
 
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
 
     useEffect(() => {
         dispatch(getParts())
+        dispatch(getFilterTerm())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 

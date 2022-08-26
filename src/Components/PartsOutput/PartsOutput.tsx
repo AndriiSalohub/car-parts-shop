@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import { useAppSelector } from '../../Hooks/hooks'
 import './PartsOutput.scss'
 
@@ -31,6 +31,8 @@ const PartsOutput: FC = () => {
     let filteredArray = [...parts]
 
     filteredArray.sort((a, b) => (a.id > b.id ? 1 : -1))
+
+    console.log(filterTerm)
 
     return (
         <section className="parts-output">
