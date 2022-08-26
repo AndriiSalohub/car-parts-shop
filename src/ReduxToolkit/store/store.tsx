@@ -3,6 +3,7 @@ import PopupSlice from '../Slices/PopupSlice/PopupSlice'
 import PartsSlice from '../Slices/PartsSlice/PartsSlice'
 import FaqSlice from '../Slices/FaqSlice/FaqSlice'
 import FilterSlice from '../Slices/FilterSlice/FilterSlice'
+import SearchSlice from '../Slices/SearchSlice/SearchSlice'
 
 const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
         parts: PartsSlice,
         faq: FaqSlice,
         filter: FilterSlice,
+        search: SearchSlice,
     },
 })
 

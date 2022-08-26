@@ -105,13 +105,13 @@ $transparent: rgba(255, 255, 255, 0);
             }
             &-btn {
                 position: absolute;
-                right: 10px;
+                right: 20px;
                 top: 15px;
                 width: 18px;
                 height: 18px;
                 border: none;
                 background-color: $transparent;
-                background-image: url('../../Assets/Images/search-icon.png');
+                // background-image: url('../../Assets/Images/search-icon.png');
                 background-repeat: no-repeat;
             }
         }

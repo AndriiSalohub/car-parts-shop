@@ -8,6 +8,7 @@ export const getFilterTerm = createAsyncThunk(
     'filter/getFilterTerm',
     async (_, { rejectWithValue, dispatch }) => {
         const data = await getDocs(filterCollectionRef)
+
         dispatch(setFilterTerm(data.docs.map((doc) => doc.data())))
         dispatch(setFilterId(data.docs.map((doc) => doc.id)))
     }
