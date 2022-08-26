@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.search{
+    padding: 30px 30px;
+    &-item{
+        &-title{
+            font-size: 27px;
+            line-height: 33px;
+            font-family: 'Comfortaa', cursive;
+            margin-bottom: 10px;
+        }
+        &-information{
+            font-size: 13px;
+            line-height: 19px;
+            font-family: "Inter", Helvetica, Arial, sans-serif
+        }
+        &-manufacturer{
+            margin-bottom: 15px;
+        }
+        &-footer{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-radius: 12px;
+            padding: 10px;
+            background-color: #fafafa;
+            margin-bottom: 20px;
+            &-read-more{
+                color: #ff5f1e;
+                font-size: 13px;
+                line-height: 19px;
+                font-family: "Inter", Helvetica, Arial, sans-serif;
+                border-left: 1px solid #e6e6e6;
+                position: relative;
+                cursor: pointer;
+                & img{
+                    position: absolute;
+                    top: 0px;
+                    left: 5px;
+                }
+                & p{
+                    padding-left: 25px;
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .search{
+        padding: 50px 60px;
+        &-item{
+            &-title{
+                font-size: 38px;
+                line-height: 47px;
+            }
+            &-information{
+                font-size: 14px;
+                line-height: 26px;
+            }
+            &-footer{
+                grid-template-columns: 3fr 1fr;
+                font-size: 14px;
+                line-height: 26px;
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .search{
+        padding: 60px 75px;
+        &-item{
+            &-title{
+                font-size: 45px;
+                line-height: 55px;
+            }
+            &-information{
+                font-size: 16px;
+                line-height: 30px;
+            }
+            &-footer{
+                grid-template-columns: 4fr 1fr;
+                font-size: 16px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .search{
+        padding: 60px 100px;
+        &-item{
+            &-footer{
+                grid-template-columns: 8fr 1fr;
+            }
+        }
+    }
+}
+
+@media(min-width: 1660px){
+    .search{
+        padding: 60px 300px;
+    }
+}

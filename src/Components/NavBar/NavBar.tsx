@@ -3,10 +3,17 @@ import { Link, NavLink } from 'react-router-dom'
 import { Squash as Hamburger } from 'hamburger-react'
 import Drawer from 'react-modern-drawer'
 import { useTransform, motion, useViewportScroll } from 'framer-motion'
+import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
+import { editSearchTerm } from '../../ReduxToolkit/Slices/SearchSlice/SearchSlice'
+import { doc, setDoc } from '@firebase/firestore'
+import db from '../../firebase'
 import './NavBar.scss'
 import 'react-modern-drawer/dist/index.css'
 
 const NavBar: FC = () => {
+    const dispatch = useAppDispatch()
+    const search = useAppSelector((state) => state.search)
+
     const [isOpen, setOpen] = useState<boolean>(false)
     const [activePanel, setActivePanel] = useState<boolean>(true)
 
@@ -23,6 +30,13 @@ const NavBar: FC = () => {
 
     const changePanelOnClose = (): void => {
         setTimeout(() => setActivePanel(true), 500)
+    }
+
+    const handleSearchChange = async (e: any, id: string) => {
+        const docRef = doc(db, 'search', id)
+        const payload = { searchTerm: e.target.value }
+        await setDoc(docRef, payload)
+        dispatch(editSearchTerm(e.target.value))
     }
 
     return (
@@ -188,11 +202,20 @@ const NavBar: FC = () => {
                             name="name"
                             placeholder="Enter your search"
                             className="menu-drawer-search-input"
+                            onChange={(e) => handleSearchChange(e, search.id)}
                         />
                         <button
                             type="submit"
                             className="menu-drawer-search-btn"
-                        ></button>
+                            onClick={(e) => e.preventDefault()}
+                        >
+                            <NavLink to="/search">
+                                <img
+                                    src="https://i.ibb.co/MZZ3gCC/search-Icon.png"
+                                    alt="search"
+                                />
+                            </NavLink>
+                        </button>
                     </form>
                     <nav
                         className={

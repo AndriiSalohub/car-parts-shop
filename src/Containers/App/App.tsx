@@ -9,6 +9,8 @@ import HomePage from '../../Pages/HomePage'
 import CategoriesPage from '../../Pages/CategoriesPage'
 import ShopPage from '../../Pages/ShopPage'
 import { getFilterTerm } from '../../ReduxToolkit/Slices/FilterSlice/FilterSlice'
+import SearchPage from '../../Pages/SearchPage'
+import { getSearchTerm } from '../../ReduxToolkit/Slices/SearchSlice/SearchSlice'
 
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
@@ -16,6 +18,7 @@ const App: FC = () => {
     useEffect(() => {
         dispatch(getParts())
         dispatch(getFilterTerm())
+        dispatch(getSearchTerm())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -34,6 +37,7 @@ const App: FC = () => {
                     <Route path="/categories" element={<CategoriesPage />} />
                     <Route path="/shop" element={<ShopPage />} />
                     <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/search" element={<SearchPage />} />
                 </Routes>
             </AnimatePresence>
         </>
