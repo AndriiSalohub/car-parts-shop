@@ -16,6 +16,7 @@ const NavBar: FC = () => {
 
     const [isOpen, setOpen] = useState<boolean>(false)
     const [activePanel, setActivePanel] = useState<boolean>(true)
+    const [isSearchInputOpen, setSearchInputOpen] = useState<boolean>(false)
 
     const { scrollY } = useViewportScroll()
     const offsetY: number[] = [0, 300]
@@ -143,11 +144,35 @@ const NavBar: FC = () => {
                         src="https://i.ibb.co/9cV89L1/search-2.png"
                         alt=""
                         className="menu-support-panel-search drawer-icons support-panele-icons"
+                        onClick={() =>
+                            setSearchInputOpen((prevState) => !prevState)
+                        }
                     />
                     <button className="menu-support-panel-ask-btn ask-btn">
                         ASK &#62;
                     </button>
                 </div>
+                <input
+                    type="text"
+                    placeholder="Enter your search"
+                    className={
+                        isSearchInputOpen
+                            ? 'menu-search-input active-input'
+                            : 'menu-search-input'
+                    }
+                />
+                <img
+                    src="https://i.ibb.co/3fQdSYr/cancel.png"
+                    alt="close"
+                    className={
+                        isSearchInputOpen
+                            ? 'menu-search-input-close active-input'
+                            : 'menu-search-input-close'
+                    }
+                    onClick={() =>
+                        setSearchInputOpen((prevState) => !prevState)
+                    }
+                />
                 <Drawer
                     open={isOpen}
                     onClose={toggleDrawer}

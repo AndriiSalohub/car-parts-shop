@@ -119,6 +119,12 @@ $transparent: rgba(255, 255, 255, 0);
     &-support-panel {
         display: none;
     }
+    &-search-input{
+        display: none;
+        &-close{
+            display: none;
+        }
+    }
 }
 
 .drawer-icons {
@@ -187,12 +193,45 @@ $transparent: rgba(255, 255, 255, 0);
                 justify-self: end;
             }
         }
+        &-search-input{
+            display: block;
+            opacity: 0;
+            position: absolute;
+            left: 130px;
+            top: 90px;
+            outline: none;
+            border: none;
+            padding: 20px;
+            width: 60%;
+            background: #ff5f1e;
+            color: #fff;
+            font-size: 15px;
+            font-family: 'Roboto', sans-serif;
+            transition: opacity .3s ease-in-out;
+            &::placeholder{
+                color: #fff;
+                font-size: 15px;
+                font-family: 'Roboto', sans-serif;
+            }
+            &-close{
+                display: block;
+                opacity: 0;
+                position: absolute;
+                left: 550px;
+                top: 105px;
+            }
+        }
     }
 
     .support-panele-icons {
         display: block;
         align-self: center;
         margin: 0 10px;
+    }
+
+    .active-input{
+        opacity: 1;
+        transition: opacity .3s ease-in-out;
     }
 }
 
@@ -208,6 +247,14 @@ $transparent: rgba(255, 255, 255, 0);
             }
             &-ask-btn {
                 width: 120px;
+            }
+        }
+        &-search-input{
+            left: 180px;
+            &-close{
+                position: absolute;
+                left: 750px;
+                top: 105px;
             }
         }
     }
@@ -241,11 +288,27 @@ $transparent: rgba(255, 255, 255, 0);
                 }
             }
         }
+        &-search-input{
+            left: 300px;
+            &-close{
+                position: absolute;
+                left: 1120px;
+                top: 105px;
+            }
+        }
     }
 }
 
 @media (min-width: 1666px) {
     .menu {
         padding: 0px 300px 0 300px;
+        &-search-input{
+            left: 280px;
+            &-close{
+                position: absolute;
+                left: 1380px;
+                top: 105px;
+            }
+        }
     }
 }
