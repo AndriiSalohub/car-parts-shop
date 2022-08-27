@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom'
 import { Squash as Hamburger } from 'hamburger-react'
 import Drawer from 'react-modern-drawer'
 import { useTransform, motion, useViewportScroll } from 'framer-motion'
@@ -17,6 +17,7 @@ const NavBar: FC = () => {
     const [isOpen, setOpen] = useState<boolean>(false)
     const [activePanel, setActivePanel] = useState<boolean>(true)
     const [isSearchInputOpen, setSearchInputOpen] = useState<boolean>(false)
+    let navigate = useNavigate()
 
     const { scrollY } = useViewportScroll()
     const offsetY: number[] = [0, 300]
@@ -38,6 +39,12 @@ const NavBar: FC = () => {
         const payload = { searchTerm: e.target.value }
         await setDoc(docRef, payload)
         dispatch(editSearchTerm(e.target.value))
+    }
+
+    const routeChange = (e: any) => {
+        if (e.key === 'Enter') {
+            navigate('/search')
+        }
     }
 
     return (
@@ -160,6 +167,8 @@ const NavBar: FC = () => {
                             ? 'menu-search-input active-input'
                             : 'menu-search-input'
                     }
+                    onKeyDown={(e) => routeChange(e)}
+                    onChange={(e) => handleSearchChange(e, search.id)}
                 />
                 <img
                     src="https://i.ibb.co/3fQdSYr/cancel.png"
@@ -228,18 +237,20 @@ const NavBar: FC = () => {
                             placeholder="Enter your search"
                             className="menu-drawer-search-input"
                             onChange={(e) => handleSearchChange(e, search.id)}
+                            onKeyDown={(e) => routeChange(e)}
                         />
                         <button
                             type="submit"
                             className="menu-drawer-search-btn"
-                            onClick={(e) => e.preventDefault()}
+                            onClick={(e) => {
+                                e.preventDefault()
+                                navigate('/search')
+                            }}
                         >
-                            <NavLink to="/search">
-                                <img
-                                    src="https://i.ibb.co/MZZ3gCC/search-Icon.png"
-                                    alt="search"
-                                />
-                            </NavLink>
+                            <img
+                                src="https://i.ibb.co/MZZ3gCC/search-Icon.png"
+                                alt="search"
+                            />
                         </button>
                     </form>
                     <nav
