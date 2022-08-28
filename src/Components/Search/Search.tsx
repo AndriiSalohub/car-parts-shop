@@ -16,27 +16,45 @@ const Search: FC = () => {
         productCode: string
         manufacturer: string
     }> = useAppSelector((state) => state.parts.parts)
-    const serachTerm = useAppSelector((state) => state.search.searchTerm)
+    const searchTerm = useAppSelector((state) => state.search.searchTerm)
     return (
         <section className="search">
-            {parts
-                .filter(
-                    (part) =>
-                        part.title
-                            .toLowerCase()
-                            .indexOf(serachTerm?.toLowerCase()) > -1
-                )
-                .map(({ id, title, productCode, manufacturer }) => {
-                    return (
-                        <SearchItem
-                            key={id}
-                            id={id}
-                            title={title}
-                            productCode={productCode}
-                            manufacturer={manufacturer}
-                        />
+            {searchTerm !== 'random id' ? (
+                parts
+                    .filter(
+                        (part) =>
+                            part.title
+                                .toLowerCase()
+                                .indexOf(searchTerm?.toLowerCase()) > -1
                     )
-                })}
+                    .map(({ id, title, productCode, manufacturer }) => {
+                        return (
+                            <SearchItem
+                                key={id}
+                                id={id}
+                                title={title}
+                                productCode={productCode}
+                                manufacturer={manufacturer}
+                            />
+                        )
+                    })
+            ) : (
+                <div className="search-errors">
+                    <img
+                        src="https://i.ibb.co/SKxMcRq/cone.png"
+                        alt="cone"
+                        className="search-errors-error-img"
+                    />
+                    <div className="search-errors-error-text">
+                        <h2 className="search-errors-error-text-title">
+                            Ooops...
+                        </h2>
+                        <p className="search-errors-error-text-information">
+                            No results found for:
+                        </p>
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
