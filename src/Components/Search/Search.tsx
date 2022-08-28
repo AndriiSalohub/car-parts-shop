@@ -5,11 +5,7 @@ import './Search.scss'
 interface SearchItemProps {
     id: number
     title: string
-    price: number
-    discount: boolean
-    discountPrice: number
     productCode: string
-    image: string
     manufacturer: string
 }
 
@@ -17,14 +13,8 @@ const Search: FC = () => {
     const parts: Array<{
         id: number
         title: string
-        price: number
-        discount: boolean
-        discountPrice: number
         productCode: string
         manufacturer: string
-        image: string
-        popularity: number
-        averageRating: number
     }> = useAppSelector((state) => state.parts.parts)
     const serachTerm = useAppSelector((state) => state.search.searchTerm)
     return (
@@ -36,44 +26,24 @@ const Search: FC = () => {
                             .toLowerCase()
                             .indexOf(serachTerm?.toLowerCase()) > -1
                 )
-                .map(
-                    ({
-                        id,
-                        title,
-                        price,
-                        discount,
-                        discountPrice,
-                        productCode,
-                        image,
-                        manufacturer,
-                    }) => {
-                        return (
-                            <SearchItem
-                                key={id}
-                                id={id}
-                                title={title}
-                                price={price}
-                                discount={discount}
-                                discountPrice={discountPrice}
-                                productCode={productCode}
-                                image={image}
-                                manufacturer={manufacturer}
-                            />
-                        )
-                    }
-                )}
+                .map(({ id, title, productCode, manufacturer }) => {
+                    return (
+                        <SearchItem
+                            key={id}
+                            id={id}
+                            title={title}
+                            productCode={productCode}
+                            manufacturer={manufacturer}
+                        />
+                    )
+                })}
         </section>
     )
 }
 
 const SearchItem: FC<SearchItemProps> = ({
-    id,
     title,
-    price,
-    discount,
-    discountPrice,
     productCode,
-    image,
     manufacturer,
 }) => {
     return (
