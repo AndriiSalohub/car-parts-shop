@@ -17,9 +17,17 @@ const Search: FC = () => {
         manufacturer: string
     }> = useAppSelector((state) => state.parts.parts)
     const searchTerm = useAppSelector((state) => state.search.searchTerm)
+
     return (
         <section className="search">
-            {searchTerm !== 'random id' ? (
+            {Object(
+                parts.filter(
+                    (part) =>
+                        part.title
+                            .toLowerCase()
+                            .indexOf(searchTerm?.toLowerCase()) > -1
+                )
+            ).length !== 0 ? (
                 parts
                     .filter(
                         (part) =>
