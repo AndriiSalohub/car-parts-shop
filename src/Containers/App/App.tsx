@@ -33,10 +33,8 @@ const App: FC = () => {
 
     useEffect(() => {
         if (location.pathname === '/search') {
-            // dispatch(getSearchTerm())
-            console.log('asdasdad')
+            dispatch(getSearchTerm())
         } else {
-            // console.log(search)
             const docRef = doc(db, 'search', search.id || 'fsaf')
             const payload = { searchTerm: 'random id' }
             setDoc(docRef, payload)

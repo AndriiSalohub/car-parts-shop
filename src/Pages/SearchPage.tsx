@@ -26,7 +26,9 @@ const SearchPage: FC = () => {
                                     .indexOf(searchTerm?.toLowerCase()) > -1
                         )
                     ).length
-                } results found for: ${searchTerm}`}
+                } results found for: ${
+                    searchTerm === 'random id' ? '' : searchTerm
+                }`}
             />
             <main>
                 <Search />
