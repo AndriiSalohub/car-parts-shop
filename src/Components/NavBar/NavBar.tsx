@@ -1,5 +1,5 @@
 import React, { useState, FC } from 'react'
-import { Link, Navigate, NavLink, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Squash as Hamburger } from 'hamburger-react'
 import Drawer from 'react-modern-drawer'
 import { useTransform, motion, useViewportScroll } from 'framer-motion'

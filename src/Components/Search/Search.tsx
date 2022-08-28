@@ -85,7 +85,7 @@ const SearchItem: FC<SearchItemProps> = ({
             <p className="search-item-manufacturer search-item-information">
                 Manufacturer: {manufacturer}
             </p>
-            <p className="search-item-footer">
+            <div className="search-item-footer">
                 <div className="search-item-footer-left-side"></div>
                 <div className="search-item-footer-read-more">
                     <img
@@ -94,7 +94,7 @@ const SearchItem: FC<SearchItemProps> = ({
                     />{' '}
                     <p>Read More</p>
                 </div>
-            </p>
+            </div>
         </div>
     )
 }

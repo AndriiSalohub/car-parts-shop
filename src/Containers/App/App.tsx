@@ -1,19 +1,28 @@
 import React, { FC, useEffect, useLayoutEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import { useAppDispatch } from '../../Hooks/hooks'
+import { doc, setDoc } from '@firebase/firestore'
+import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
+import { getFilterTerm } from '../../ReduxToolkit/Slices/FilterSlice/FilterSlice'
+import {
+    editSearchTerm,
+    getSearchTerm,
+} from '../../ReduxToolkit/Slices/SearchSlice/SearchSlice'
 import { getParts } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
 import { AnimatePresence } from 'framer-motion'
+import db from '../../firebase'
 import AboutPage from '../../Pages/AboutPage'
 import ContactPage from '../../Pages/ContactPage'
 import HomePage from '../../Pages/HomePage'
 import CategoriesPage from '../../Pages/CategoriesPage'
 import ShopPage from '../../Pages/ShopPage'
-import { getFilterTerm } from '../../ReduxToolkit/Slices/FilterSlice/FilterSlice'
 import SearchPage from '../../Pages/SearchPage'
-import { getSearchTerm } from '../../ReduxToolkit/Slices/SearchSlice/SearchSlice'
 
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
+
+    const search = useAppSelector((state) => state.search)
+
+    const location = useLocation()
 
     useEffect(() => {
         dispatch(getParts())
@@ -22,11 +31,24 @@ const App: FC = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
+    useEffect(() => {
+        if (location.pathname === '/search') {
+            // dispatch(getSearchTerm())
+            console.log('asdasdad')
+        } else {
+            // console.log(search)
+            const docRef = doc(db, 'search', search.id || 'fsaf')
+            const payload = { searchTerm: 'random id' }
+            setDoc(docRef, payload)
+            dispatch(editSearchTerm(' '))
+            console.log(search.id)
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [location.pathname])
+
     useLayoutEffect(() => {
         window.scrollTo(0, 0)
     })
-
-    const location = useLocation()
 
     return (
         <>
