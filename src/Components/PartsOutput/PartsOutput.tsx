@@ -96,6 +96,22 @@ const PartsItem: FC<PartsItemProps> = ({
         <div className="parts-item">
             <div className="parts-item-img">
                 <img src={image} alt={title} />
+                <div className="parts-item-img-buttons">
+                    <button className="parts-item-img-buttons-btn">
+                        <img
+                            src="https://i.ibb.co/WyKfWDj/shopping-cart.png"
+                            alt="cart"
+                            className="parts-item-img-buttons-btn-img"
+                        />
+                    </button>
+                    <button className="parts-item-img-buttons-btn parts-item-img-buttons-btn-link">
+                        <img
+                            src="https://i.ibb.co/C7qWy3r/link.png"
+                            alt="link"
+                            className="parts-item-img-buttons-btn-img"
+                        />
+                    </button>
+                </div>
             </div>
             <h2 className="parts-item-title">{title}</h2>
             <p className="parts-item-price">

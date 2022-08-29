@@ -11,6 +11,7 @@
 .parts-item{
     &-img{
         overflow: hidden;
+        position: relative;
         & img{
             width: 100%;
             scale: 1;
@@ -19,6 +20,29 @@
                 scale: 1.1;
                 transition: scale .3s ease-in-out;
             }
+        }
+        &-buttons{
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            &-btn{
+                cursor: pointer;
+                background-color: #d3521e;
+                padding: 9px;
+                outline: none;
+                border: none;
+                &-link{
+                    border-left: 1px solid #f18a5f;
+                }
+            }
+        }
+        &:hover &-buttons{
+            opacity: 1;
+            transition: opacity .3s ease-in-out;
         }
     }
     &-title{

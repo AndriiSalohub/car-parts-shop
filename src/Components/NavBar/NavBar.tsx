@@ -145,6 +145,7 @@ const NavBar: FC = () => {
                         src="https://i.ibb.co/NjR8Pwd/shopping-bag-3.png"
                         alt=""
                         className="menu-support-panel-bag drawer-icons support-panele-icons"
+                        onClick={() => navigate('/cart')}
                     />
                     <span className="menu-support-panel-bag-counter">0</span>
                     <img
