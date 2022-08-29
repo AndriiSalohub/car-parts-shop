@@ -17,6 +17,7 @@ import CategoriesPage from '../../Pages/CategoriesPage'
 import ShopPage from '../../Pages/ShopPage'
 import SearchPage from '../../Pages/SearchPage'
 import FilteredCategoriesPage from '../../Pages/FilteredCategoriesPage'
+import CartPage from '../../Pages/CartPage'
 
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
@@ -63,6 +64,7 @@ const App: FC = () => {
                     <Route path="/shop" element={<ShopPage />} />
                     <Route path="/contact" element={<ContactPage />} />
                     <Route path="/search" element={<SearchPage />} />
+                    <Route path="/cart" element={<CartPage />} />
                 </Routes>
             </AnimatePresence>
         </>

@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.cart{
+    padding: 30px;
+    &-empty{
+        display: grid;
+        grid-template-columns: 1fr 6fr 1fr;
+        align-items: center;
+        background: #ffe38b;
+        padding: 10px;
+        &-lightbulb{
+            justify-self: start;
+        }
+        &-title{
+            color: #9b812e;
+            font-size: 13px;
+            line-height: 19px;
+            font-family: "Inter", Helvetica, Arial, sans-serif;
+        }
+        &-close{
+            justify-self: end;
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .cart{
+        padding: 30px 60px;
+        &-empty{
+            padding: 20px;
+            &-title{
+                font-size: 14px;
+                line-height: 26px;
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .cart{
+        padding: 30px 75px;
+        &-empty{
+            grid-template-columns: 0.5fr 6fr 1fr;
+            &-title{
+                font-size: 16px;
+                line-height: 30px;
+            }
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .cart{
+        padding: 30px 100px;
+    }
+}
+
+@media(min-width: 1660px){
+    .cart{
+        padding: 30px 300px;
+        &-empty{
+            grid-template-columns: 0.3fr 6fr 1fr;
+        }
+    }
+}
