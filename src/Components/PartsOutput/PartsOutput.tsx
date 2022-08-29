@@ -13,8 +13,8 @@ interface PartsItemProps {
     manufacturer: string
 }
 
-const PartsOutput: FC = () => {
-    const parts: Array<{
+interface PartsOutputProps {
+    array: Array<{
         id: number
         title: string
         price: number
@@ -25,14 +25,15 @@ const PartsOutput: FC = () => {
         image: string
         popularity: number
         averageRating: number
-    }> = useAppSelector((state) => state.parts.parts)
+    }>
+}
+
+const PartsOutput: FC<PartsOutputProps> = ({ array }) => {
     const filterTerm = useAppSelector((state) => state.filter.filterTerm)
 
-    let filteredArray = [...parts]
+    let filteredArray = [...array]
 
     filteredArray.sort((a, b) => (a.id > b.id ? 1 : -1))
-
-    console.log(filterTerm)
 
     return (
         <section className="parts-output">

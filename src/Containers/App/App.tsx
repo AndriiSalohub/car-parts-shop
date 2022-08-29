@@ -16,6 +16,7 @@ import HomePage from '../../Pages/HomePage'
 import CategoriesPage from '../../Pages/CategoriesPage'
 import ShopPage from '../../Pages/ShopPage'
 import SearchPage from '../../Pages/SearchPage'
+import FilteredCategoriesPage from '../../Pages/FilteredCategoriesPage'
 
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
@@ -55,6 +56,10 @@ const App: FC = () => {
                     <Route path="/" element={<HomePage />} />
                     <Route path="/about" element={<AboutPage />} />
                     <Route path="/categories" element={<CategoriesPage />} />
+                    <Route
+                        path="/categories/:currentCategory"
+                        element={<FilteredCategoriesPage />}
+                    />
                     <Route path="/shop" element={<ShopPage />} />
                     <Route path="/contact" element={<ContactPage />} />
                     <Route path="/search" element={<SearchPage />} />
