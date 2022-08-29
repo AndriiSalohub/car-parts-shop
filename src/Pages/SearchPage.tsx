@@ -18,14 +18,17 @@ const SearchPage: FC = () => {
             <NavBar />
             <Subheader
                 pageTitle={`${
-                    Object(
-                        parts.filter(
-                            (part) =>
-                                part.title
-                                    .toLowerCase()
-                                    .indexOf(searchTerm?.toLowerCase()) > -1
-                        )
-                    ).length
+                    searchTerm.trim() !== ''
+                        ? Object(
+                              parts.filter(
+                                  (part) =>
+                                      part.title
+                                          .toLowerCase()
+                                          .indexOf(searchTerm?.toLowerCase()) >
+                                      -1
+                              )
+                          ).length
+                        : 0
                 } results found for: ${
                     searchTerm === 'random id' ? '' : searchTerm
                 }`}
