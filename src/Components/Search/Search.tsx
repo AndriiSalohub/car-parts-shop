@@ -27,7 +27,7 @@ const Search: FC = () => {
                             .toLowerCase()
                             .indexOf(searchTerm?.toLowerCase()) > -1
                 )
-            ).length !== 0 ? (
+            ).length !== 0 && searchTerm.trim() !== '' ? (
                 parts
                     .filter(
                         (part) =>
