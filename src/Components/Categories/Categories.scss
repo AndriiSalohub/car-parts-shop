@@ -9,6 +9,9 @@
     background-color: #000000;
     position: relative;
     &-list{
+        & a{
+            text-decoration: none;
+        }
         &-item{
             &-img{
                 width: 100%;
