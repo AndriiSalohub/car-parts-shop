@@ -88,6 +88,22 @@ const ProductItem: FC<ProductItemProps> = ({
                     whileHover={{ scale: 1.2 }}
                     className="product-item-img"
                 />
+                <div className="product-item-img-container-buttons">
+                    <button className="product-item-img-container-buttons-btn">
+                        <img
+                            src="https://i.ibb.co/WyKfWDj/shopping-cart.png"
+                            alt="cart"
+                            className="product-item-img-container-buttons-btn-img"
+                        />
+                    </button>
+                    <button className="product-item-img-container-buttons-btn product-item-img-container-buttons-btn-link">
+                        <img
+                            src="https://i.ibb.co/C7qWy3r/link.png"
+                            alt="link"
+                            className="product-item-img-container-buttons-btn-img"
+                        />
+                    </button>
+                </div>
             </div>
             <h2 className="product-item-title">{title}</h2>
             {discount ? (
