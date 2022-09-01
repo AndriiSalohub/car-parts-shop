@@ -110,17 +110,14 @@ const PartsItem: FC<PartsItemProps> = ({
     const totalAmount = useAppSelector((state) => state.total)
 
     const handleBuy = async (id: number, docId: string) => {
-        const currentAmount = parts.find((part) => {
-            if (part.id === id) {
-                return part.id
-            }
-        })?.amount
+        const currentAmount = parts.find((part) => part.id === id)?.amount
         const docRef = doc(db, 'parts', docId)
         const payload = {
             ...parts.find((part) => part.id === id),
-            amount: currentAmount || 0 + 1,
+            amount: currentAmount === undefined ? 0 + 1 : currentAmount + 1,
         }
         delete payload.docId
+        console.log(payload)
         await setDoc(docRef, payload)
         dispatch(changePartAmount(id))
     }
