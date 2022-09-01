@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, current } from '@reduxjs/toolkit'
 import { collection, getDocs } from '@firebase/firestore'
 import db from '../../../firebase'
 
@@ -17,6 +17,7 @@ export const getParts = createAsyncThunk(
             setParts(
                 data.docs.map((doc) => ({
                     ...doc.data(),
+                    docId: doc.id,
                 }))
             )
         )
@@ -30,6 +31,12 @@ const partsSlice = createSlice({
         setParts: (state, action) => {
             state.parts = action.payload
         },
+        changePartAmount: (state, action) => {
+            const currentPart: any = state.parts.find(
+                (part: any) => part.id === action.payload
+            )
+            currentPart.amount += 1
+        },
     },
     extraReducers: {
         [getParts.fulfilled.type]: () => console.log('fulfilled'),
@@ -38,5 +45,5 @@ const partsSlice = createSlice({
     },
 })
 
-export const { setParts } = partsSlice.actions
+export const { setParts, changePartAmount } = partsSlice.actions
 export default partsSlice.reducer

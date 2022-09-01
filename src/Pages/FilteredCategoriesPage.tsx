@@ -22,6 +22,8 @@ const FilteredCategoriesPage: FC = () => {
         popularity: number
         averageRating: number
         categories: any
+        docId: string
+        amount: number
     }> = useAppSelector((state) => state.parts.parts)
 
     const { currentCategory } = useParams()

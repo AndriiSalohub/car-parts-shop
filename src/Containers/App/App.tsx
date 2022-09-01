@@ -18,6 +18,7 @@ import ShopPage from '../../Pages/ShopPage'
 import SearchPage from '../../Pages/SearchPage'
 import FilteredCategoriesPage from '../../Pages/FilteredCategoriesPage'
 import CartPage from '../../Pages/CartPage'
+import { getTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
 
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
@@ -30,6 +31,7 @@ const App: FC = () => {
         dispatch(getParts())
         dispatch(getFilterTerm())
         dispatch(getSearchTerm())
+        dispatch(getTotal())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
@@ -41,7 +43,6 @@ const App: FC = () => {
             const payload = { searchTerm: 'random id' }
             setDoc(docRef, payload)
             dispatch(editSearchTerm(' '))
-            console.log(search.id)
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [location.pathname])

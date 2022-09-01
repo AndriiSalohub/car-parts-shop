@@ -13,6 +13,7 @@ import 'react-modern-drawer/dist/index.css'
 const NavBar: FC = () => {
     const dispatch = useAppDispatch()
     const search = useAppSelector((state) => state.search)
+    const { total } = useAppSelector((state) => state.total)
 
     const [isOpen, setOpen] = useState<boolean>(false)
     const [activePanel, setActivePanel] = useState<boolean>(true)
@@ -147,7 +148,9 @@ const NavBar: FC = () => {
                         className="menu-support-panel-bag drawer-icons support-panele-icons"
                         onClick={() => navigate('/cart')}
                     />
-                    <span className="menu-support-panel-bag-counter">0</span>
+                    <span className="menu-support-panel-bag-counter">
+                        {total}
+                    </span>
                     <img
                         src="https://i.ibb.co/9cV89L1/search-2.png"
                         alt=""
@@ -216,7 +219,7 @@ const NavBar: FC = () => {
                             />
                         </NavLink>
                         <span className="menu-drawer-icons-bag-counter">
-                            20
+                            {total}
                         </span>
                         <img
                             src="https://i.ibb.co/9cV89L1/search-2.png"
