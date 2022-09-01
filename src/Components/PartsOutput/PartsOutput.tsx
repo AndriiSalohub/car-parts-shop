@@ -1,6 +1,10 @@
 import React, { FC } from 'react'
-import { useAppSelector } from '../../Hooks/hooks'
+import { doc, setDoc } from '@firebase/firestore'
+import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
+import db from '../../firebase'
 import './PartsOutput.scss'
+import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
+import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
 
 interface PartsItemProps {
     id: number
@@ -11,6 +15,7 @@ interface PartsItemProps {
     productCode: string
     image: string
     manufacturer: string
+    docId: string
 }
 
 interface PartsOutputProps {
@@ -25,6 +30,7 @@ interface PartsOutputProps {
         image: string
         popularity: number
         averageRating: number
+        docId: string
     }>
 }
 
@@ -64,6 +70,7 @@ const PartsOutput: FC<PartsOutputProps> = ({ array }) => {
                         productCode,
                         image,
                         manufacturer,
+                        docId,
                     }: PartsItemProps) => (
                         <PartsItem
                             key={id}
@@ -75,6 +82,7 @@ const PartsOutput: FC<PartsOutputProps> = ({ array }) => {
                             productCode={productCode}
                             image={image}
                             manufacturer={manufacturer}
+                            docId={docId}
                         />
                     )
                 )}
@@ -91,13 +99,51 @@ const PartsItem: FC<PartsItemProps> = ({
     productCode,
     image,
     manufacturer,
+    docId,
 }) => {
+    const dispatch = useAppDispatch()
+    const parts: Array<{
+        id: number
+        docId: string
+        amount: number
+    }> = useAppSelector((state) => state.parts.parts)
+    const totalAmount = useAppSelector((state) => state.total)
+
+    const handleBuy = async (id: number, docId: string) => {
+        const currentAmount = parts.find((part) => {
+            if (part.id === id) {
+                return part.id
+            }
+        })?.amount
+        const docRef = doc(db, 'parts', docId)
+        const payload = {
+            ...parts.find((part) => part.id === id),
+            amount: currentAmount || 0 + 1,
+        }
+        delete payload.docId
+        await setDoc(docRef, payload)
+        dispatch(changePartAmount(id))
+    }
+
+    const changeTotal = async (total: number, totalId: string) => {
+        const docRef = doc(db, 'total', totalId)
+        const payload = { total: total + 1 }
+        await setDoc(docRef, payload)
+        dispatch(increaseTotal())
+    }
+
     return (
         <div className="parts-item">
             <div className="parts-item-img">
                 <img src={image} alt={title} />
                 <div className="parts-item-img-buttons">
-                    <button className="parts-item-img-buttons-btn">
+                    <button
+                        className="parts-item-img-buttons-btn"
+                        onClick={async () => {
+                            await handleBuy(id, docId)
+                            await changeTotal(totalAmount.total, totalAmount.id)
+                        }}
+                    >
                         <img
                             src="https://i.ibb.co/WyKfWDj/shopping-cart.png"
                             alt="cart"

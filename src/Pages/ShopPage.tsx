@@ -19,6 +19,8 @@ const ShopPage: FC = () => {
         image: string
         popularity: number
         averageRating: number
+        docId: string
+        amount: number
     }> = useAppSelector((state) => state.parts.parts)
 
     return (
