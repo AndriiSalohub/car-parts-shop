@@ -53,9 +53,41 @@ const PartsOutput: FC<PartsOutputProps> = ({ array }) => {
                         case 'sort by latest':
                             return a.id < b.id ? 1 : -1
                         case 'sort by price: low to high':
-                            return a.price > b.price ? 1 : -1
+                            if (a.discount === true && b.discount === false) {
+                                return a.discountPrice > b.price ? 1 : -1
+                            } else if (
+                                a.discount === false &&
+                                b.discount === true
+                            ) {
+                                return a.price > b.discountPrice ? 1 : -1
+                            } else if (a.discount && b.discount) {
+                                if (a.discountPrice === b.discountPrice) {
+                                    return a.price > b.price ? 1 : -1
+                                }
+                                return a.discountPrice > b.discountPrice
+                                    ? 1
+                                    : -1
+                            } else {
+                                return a.price > b.price ? 1 : -1
+                            }
                         case 'sort by price: high to low':
-                            return a.price < b.price ? 1 : -1
+                            if (a.discount === true && b.discount === false) {
+                                return a.discountPrice < b.price ? 1 : -1
+                            } else if (
+                                a.discount === false &&
+                                b.discount === true
+                            ) {
+                                return a.price < b.discountPrice ? 1 : -1
+                            } else if (a.discount && b.discount) {
+                                if (a.discountPrice === b.discountPrice) {
+                                    return a.price < b.price ? 1 : -1
+                                }
+                                return a.discountPrice < b.discountPrice
+                                    ? 1
+                                    : -1
+                            } else {
+                                return a.price < b.price ? 1 : -1
+                            }
                         default:
                             return a.id > b.id ? 1 : -1
                     }
@@ -117,7 +149,6 @@ const PartsItem: FC<PartsItemProps> = ({
             amount: currentAmount === undefined ? 0 + 1 : currentAmount + 1,
         }
         delete payload.docId
-        console.log(payload)
         await setDoc(docRef, payload)
         dispatch(changePartAmount(id))
     }
