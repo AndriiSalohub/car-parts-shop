@@ -6,16 +6,20 @@ import db from '../../firebase'
 import './FilterPanel.scss'
 
 const FilterPanel: FC = () => {
-    const dispatch = useAppDispatch()
+    const dispatch: Function = useAppDispatch()
 
     const parts = useAppSelector((state) => state.parts.parts)
     const filter = useAppSelector((state) => state.filter)
 
-    const handleFilterChange = async (e: any, id: string) => {
+    const handleFilterChange: Function = async (
+        e: React.SyntheticEvent,
+        id: string
+    ) => {
+        let target = e.target as HTMLInputElement
         const docRef = doc(db, 'filter', id)
-        const payload = { filterterm: e.target.value }
+        const payload = { filterterm: target.value }
         await setDoc(docRef, payload)
-        dispatch(editFilterTerm(e.target.value))
+        dispatch(editFilterTerm(target.value))
     }
 
     return (

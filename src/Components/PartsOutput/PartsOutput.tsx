@@ -133,7 +133,7 @@ const PartsItem: FC<PartsItemProps> = ({
     manufacturer,
     docId,
 }) => {
-    const dispatch = useAppDispatch()
+    const dispatch: Function = useAppDispatch()
     const parts: Array<{
         id: number
         docId: string
@@ -141,7 +141,7 @@ const PartsItem: FC<PartsItemProps> = ({
     }> = useAppSelector((state) => state.parts.parts)
     const totalAmount = useAppSelector((state) => state.total)
 
-    const handleBuy = async (id: number, docId: string) => {
+    const handleBuy: Function = async (id: number, docId: string) => {
         const currentAmount = parts.find((part) => part.id === id)?.amount
         const docRef = doc(db, 'parts', docId)
         const payload = {
@@ -153,7 +153,7 @@ const PartsItem: FC<PartsItemProps> = ({
         dispatch(changePartAmount(id))
     }
 
-    const changeTotal = async (total: number, totalId: string) => {
+    const changeTotal: Function = async (total: number, totalId: string) => {
         const docRef = doc(db, 'total', totalId)
         const payload = { total: total + 1 }
         await setDoc(docRef, payload)

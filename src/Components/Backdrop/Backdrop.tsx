@@ -13,7 +13,7 @@ interface BackdropProps {
 const Backdrop: FC<BackdropProps> = ({ children, videoType }) => {
     const dispatch: Function = useAppDispatch()
 
-    const handleClose = (videoType: string) => {
+    const handleClose: Function = (videoType: string) => {
         switch (videoType) {
             case 'popup': {
                 dispatch(setPopupClose())

@@ -16,7 +16,9 @@ const Search: FC = () => {
         productCode: string
         manufacturer: string
     }> = useAppSelector((state) => state.parts.parts)
-    const searchTerm = useAppSelector((state) => state.search.searchTerm)
+    const searchTerm: string = useAppSelector(
+        (state) => state.search.searchTerm
+    )
 
     return (
         <section className="search">

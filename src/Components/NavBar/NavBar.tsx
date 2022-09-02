@@ -11,7 +11,7 @@ import './NavBar.scss'
 import 'react-modern-drawer/dist/index.css'
 
 const NavBar: FC = () => {
-    const dispatch = useAppDispatch()
+    const dispatch: Function = useAppDispatch()
     const search = useAppSelector((state) => state.search)
     const { total } = useAppSelector((state) => state.total)
 
@@ -31,18 +31,22 @@ const NavBar: FC = () => {
         setOpen((prevState: boolean) => !prevState)
     }
 
-    const changePanelOnClose = (): void => {
+    const changePanelOnClose: Function = (): void => {
         setTimeout(() => setActivePanel(true), 500)
     }
 
-    const handleSearchChange = async (e: any, id: string) => {
+    const handleSearchChange: Function = async (
+        e: React.SyntheticEvent,
+        id: string
+    ) => {
+        let target = e.target as HTMLInputElement
         const docRef = doc(db, 'search', id)
-        const payload = { searchTerm: e.target.value }
+        const payload = { searchTerm: target.value }
         await setDoc(docRef, payload)
-        dispatch(editSearchTerm(e.target.value))
+        dispatch(editSearchTerm(target.value))
     }
 
-    const routeChange = (e: any) => {
+    const routeChange: Function = (e: any) => {
         if (e.key === 'Enter') {
             navigate('/search')
         }
