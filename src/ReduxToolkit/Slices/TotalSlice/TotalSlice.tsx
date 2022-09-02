@@ -35,9 +35,17 @@ const TotalSlice = createSlice({
         decreaseTotal: (state) => {
             state.total = state.total - 1
         },
+        changeTotalAmount: (state, action) => {
+            state.total = state.total - action.payload
+        },
     },
 })
 
-export const { setTotal, setTotalId, increaseTotal, decreaseTotal } =
-    TotalSlice.actions
+export const {
+    setTotal,
+    setTotalId,
+    increaseTotal,
+    decreaseTotal,
+    changeTotalAmount,
+} = TotalSlice.actions
 export default TotalSlice.reducer

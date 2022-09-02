@@ -215,13 +215,12 @@ const NavBar: FC = () => {
                         ASK &#62;
                     </button>
                     <div className="menu-drawer-icons">
-                        <NavLink to="cart">
-                            <img
-                                src="https://i.ibb.co/NjR8Pwd/shopping-bag-3.png"
-                                alt=""
-                                className="menu-drawer-icons-bag drawer-icons"
-                            />
-                        </NavLink>
+                        <img
+                            src="https://i.ibb.co/NjR8Pwd/shopping-bag-3.png"
+                            alt=""
+                            className="menu-drawer-icons-bag drawer-icons"
+                            onClick={() => navigate('/cart')}
+                        />
                         <span className="menu-drawer-icons-bag-counter">
                             {total}
                         </span>

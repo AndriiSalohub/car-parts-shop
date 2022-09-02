@@ -37,6 +37,12 @@ const partsSlice = createSlice({
             )
             currentPart.amount += 1
         },
+        clearPartAmount: (state, action) => {
+            const currentPart: any = state.parts.find(
+                (part: any) => part.id === action.payload
+            )
+            currentPart.amount = 0
+        },
     },
     extraReducers: {
         [getParts.fulfilled.type]: () => console.log('fulfilled'),
@@ -45,5 +51,6 @@ const partsSlice = createSlice({
     },
 })
 
-export const { setParts, changePartAmount } = partsSlice.actions
+export const { setParts, changePartAmount, clearPartAmount } =
+    partsSlice.actions
 export default partsSlice.reducer
