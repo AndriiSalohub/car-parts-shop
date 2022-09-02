@@ -7,7 +7,7 @@ interface BoardsProps {
 }
 
 const Boards: FC<BoardsProps> = ({ boardName, title }) => {
-    const boardsImgClassName = (boardName: string) => {
+    const boardsImgClassName: Function = (boardName: string) => {
         switch (boardName) {
             case 'contact':
                 return 'boards-img contact-board'

@@ -8,7 +8,7 @@ interface FaqProps {
 }
 
 const Faq: FC<FaqProps> = ({ children }) => {
-    const dispatch = useAppDispatch()
+    const dispatch: Function = useAppDispatch()
 
     return (
         <section className="faq">
