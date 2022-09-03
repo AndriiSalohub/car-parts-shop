@@ -111,8 +111,11 @@ $transparent: rgba(255, 255, 255, 0);
                 height: 18px;
                 border: none;
                 background-color: $transparent;
-                // background-image: url('../../Assets/Images/search-icon.png');
                 background-repeat: no-repeat;
+                & img {
+                    width: 16px;
+                    height: 16px;
+                }
             }
         }
     }

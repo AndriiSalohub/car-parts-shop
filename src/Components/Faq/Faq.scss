@@ -53,6 +53,9 @@
             border: none;
             cursor: pointer;
             position: relative;
+            &-icon{
+                width: 32px;
+            }
         }
     }
 }
