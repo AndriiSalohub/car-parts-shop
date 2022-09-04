@@ -6,7 +6,9 @@
 
 .useful-information {
     background-color: #111111;
-    padding: 250px 30px 50px 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 50px;
     &-contacts {
         color: #cccccc;
         text-align: center;
@@ -56,8 +58,19 @@
     }
 }
 
+.with-big-pad{
+    padding-top: 250px;
+}
+
+.without-big-pad {
+    padding-top: 30px;
+}
+
 @media (min-width: 768px) {
     .useful-information {
+        padding-right: 60px;
+        padding-left: 60px;
+        padding-bottom: 0px;
         display: grid;
         grid-template-columns: 2fr 1fr 1fr;
         grid-template-rows: repeat(2, 1fr);
@@ -98,11 +111,20 @@
             }
         }
     }
+
+    .without-big-pad {
+        padding-top: 50px;
+    }
+
+    .with-big-pad{
+        padding-top: 250px;
+    }
 }
 
 @media (min-width: 1024px) {
     .useful-information {
-        padding: 250px 60px 50px 60px;
+        padding-right: 75px;
+        padding-left: 75px;
         &-title {
             color: #fff;
             text-align: left;
@@ -113,11 +135,16 @@
             margin-bottom: 15px;
         }
     }
+
+    .without-big-pad {
+        padding-top: 60px;
+    }
 }
 
 @media (min-width: 1440px) {
     .useful-information {
-        padding: 250px 120px 50px 120px;
+        padding-right: 120px;
+        padding-left: 120px;
         grid-gap: 30px;
         &-contacts {
             padding-right: 30px;
@@ -129,11 +156,16 @@
 
 @media (min-width: 1660px) {
     .useful-information {
-        padding: 250px 240px 50px 240px;
+        padding-right: 240px;
+        padding-left: 240px;
         grid-gap: 30px;
         &-contacts {
             padding-left: 130px;
             font-size: 17px;
         }
+    }
+
+    .with-big-pad{
+        padding-top: 250px;
     }
 }
