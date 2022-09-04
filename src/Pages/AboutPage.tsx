@@ -68,8 +68,7 @@ const AboutPage: FC = () => {
         : (document.body.style.overflow = 'auto')
 
     return (
-        <AnimatedPage>
-            <NavBar />
+        <>
             <Boards title="about our shop" boardName="about" />
             <main>
                 <HowWeWork />
@@ -94,8 +93,7 @@ const AboutPage: FC = () => {
                 ) : null}
                 <UsefulInformation />
             </main>
-            <Footer />
-        </AnimatedPage>
+        </>
     )
 }
 

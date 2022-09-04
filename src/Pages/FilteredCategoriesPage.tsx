@@ -1,12 +1,9 @@
 import React, { FC } from 'react'
 import { useAppSelector } from '../Hooks/hooks'
 import { useParams } from 'react-router-dom'
-import Footer from '../Components/Footer/Footer'
-import NavBar from '../Components/NavBar/NavBar'
 import PartsOutput from '../Components/PartsOutput/PartsOutput'
 import Subheader from '../Components/Subheader/Subheader'
 import UsefulInformation from '../Components/UsefulInformation/UsefulInformation'
-import AnimatedPage from './AnimatedPage'
 import FilterPanel from '../Components/FilterPanel/FilterPanel'
 
 const FilteredCategoriesPage: FC = () => {
@@ -29,8 +26,7 @@ const FilteredCategoriesPage: FC = () => {
     const { currentCategory } = useParams()
 
     return (
-        <AnimatedPage>
-            <NavBar />
+        <>
             <Subheader
                 pageTitle={
                     currentCategory
@@ -50,8 +46,7 @@ const FilteredCategoriesPage: FC = () => {
                 />
                 <UsefulInformation />
             </main>
-            <Footer />
-        </AnimatedPage>
+        </>
     )
 }
 
