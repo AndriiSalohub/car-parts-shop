@@ -72,6 +72,21 @@
             margin-left: 85%;
         }
     }
+    &-return-to-shop-btn{
+        margin-top: 20px;
+        color: #ffffff;
+        background-color: #ff5f1e;
+        border-color: transparent;
+        font-family: Comfortaa;
+        font-size: 14px;
+        line-height: 14px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        padding: 15px 30px 15px 30px;
+        border-width: 0px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
 }
 
 @media(min-width: 768px){

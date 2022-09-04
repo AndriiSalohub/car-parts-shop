@@ -163,7 +163,10 @@ const NavBar: FC = () => {
                             setSearchInputOpen((prevState) => !prevState)
                         }
                     />
-                    <button className="menu-support-panel-ask-btn ask-btn">
+                    <button
+                        className="menu-support-panel-ask-btn ask-btn"
+                        onClick={() => navigate('/contact')}
+                    >
                         ASK &#62;
                     </button>
                 </div>
@@ -211,7 +214,10 @@ const NavBar: FC = () => {
                             size={25}
                         />
                     </div>
-                    <button className="menu-drawer-ask-btn ask-btn">
+                    <button
+                        className="menu-drawer-ask-btn ask-btn"
+                        onClick={() => navigate('/contact')}
+                    >
                         ASK &#62;
                     </button>
                     <div className="menu-drawer-icons">
