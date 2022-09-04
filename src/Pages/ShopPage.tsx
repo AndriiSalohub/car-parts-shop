@@ -3,6 +3,7 @@ import { useAppSelector } from '../Hooks/hooks'
 import FilterPanel from '../Components/FilterPanel/FilterPanel'
 import PartsOutput from '../Components/PartsOutput/PartsOutput'
 import Subheader from '../Components/Subheader/Subheader'
+import UsefulInformation from '../Components/UsefulInformation/UsefulInformation'
 
 const ShopPage: FC = () => {
     const parts: Array<{
@@ -26,6 +27,7 @@ const ShopPage: FC = () => {
             <main>
                 <FilterPanel />
                 <PartsOutput array={parts} />
+                <UsefulInformation />
             </main>
         </>
     )

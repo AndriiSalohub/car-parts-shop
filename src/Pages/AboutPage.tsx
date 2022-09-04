@@ -3,15 +3,12 @@ import ReactPlayer from 'react-player'
 import { useAppSelector } from '../Hooks/hooks'
 import Boards from '../Components/Boards/Boards'
 import Faq from '../Components/Faq/Faq'
-import Footer from '../Components/Footer/Footer'
 import HowWeWork from '../Components/HowWeWork/HowWeWork'
-import NavBar from '../Components/NavBar/NavBar'
 import Stats from '../Components/Stats/Stats'
 import Player from '../Components/Player/Player'
 import Backdrop from '../Components/Backdrop/Backdrop'
 import OurContacts from '../Components/OurContacts/OurContacts'
 import UsefulInformation from '../Components/UsefulInformation/UsefulInformation'
-import AnimatedPage from './AnimatedPage'
 
 const AboutPage: FC = () => {
     const [windowSize, setWindowSize] = useState(getWindowSize())

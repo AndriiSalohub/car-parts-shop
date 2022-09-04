@@ -1,10 +1,33 @@
-import React, { FC } from 'react'
-import { Link } from 'react-router-dom'
+import React, { FC, useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import './UsefulInformation.scss'
 
 const UsefulInformation: FC = () => {
+    const [isBigPaddingNeed, setBigPaddingNeed] = useState(true)
+
+    const location = useLocation()
+
+    useEffect(() => {
+        if (
+            location.pathname === '/' ||
+            location.pathname === '/about' ||
+            location.pathname === '/categories' ||
+            location.pathname === '/contact'
+        ) {
+            setBigPaddingNeed(true)
+        } else {
+            setBigPaddingNeed(false)
+        }
+    }, [location.pathname])
+
     return (
-        <section className="useful-information">
+        <section
+            className={
+                isBigPaddingNeed
+                    ? 'useful-information with-big-pad'
+                    : 'useful-information without-big-pad'
+            }
+        >
             <div className="useful-information-contacts">
                 <p className="useful-information-contacts-description">
                     Lorem ipsum dolor sit amet enim. Etiam ullamcorper.
