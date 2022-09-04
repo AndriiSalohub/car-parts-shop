@@ -5,6 +5,7 @@ import { clearPartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice
 import db from '../../firebase'
 import './Cart.scss'
 import { changeTotalAmount } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
+import { useNavigate } from 'react-router-dom'
 
 interface CartItemProps {
     id: number
@@ -29,6 +30,8 @@ interface PartProps {
 }
 
 const Cart: FC = () => {
+    const navigate = useNavigate()
+
     const [windowSize, setWindowSize] = useState(getWindowSize())
 
     const { total } = useAppSelector((state) => state.total)
@@ -142,6 +145,12 @@ const Cart: FC = () => {
                         )
                 )}
             </div>
+            <button
+                className="cart-return-to-shop-btn"
+                onClick={() => navigate('/shop')}
+            >
+                Return to shop
+            </button>
         </section>
     )
 }
