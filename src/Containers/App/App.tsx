@@ -19,6 +19,7 @@ import SearchPage from '../../Pages/SearchPage'
 import FilteredCategoriesPage from '../../Pages/FilteredCategoriesPage'
 import CartPage from '../../Pages/CartPage'
 import { getTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
+import Layout from '../../Components/Layout/Layout'
 
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
@@ -55,17 +56,19 @@ const App: FC = () => {
         <>
             <AnimatePresence exitBeforeEnter>
                 <Routes key={location.pathname} location={location}>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/about" element={<AboutPage />} />
-                    <Route path="/categories" element={<CategoriesPage />} />
-                    <Route
-                        path="/categories/:currentCategory"
-                        element={<FilteredCategoriesPage />}
-                    />
-                    <Route path="/shop" element={<ShopPage />} />
-                    <Route path="/contact" element={<ContactPage />} />
-                    <Route path="/search" element={<SearchPage />} />
-                    <Route path="/cart" element={<CartPage />} />
+                    <Route path="/" element={<Layout />}>
+                        <Route index element={<HomePage />} />
+                        <Route path="about" element={<AboutPage />} />
+                        <Route path="categories" element={<CategoriesPage />} />
+                        <Route
+                            path="categories/:currentCategory"
+                            element={<FilteredCategoriesPage />}
+                        />
+                        <Route path="shop" element={<ShopPage />} />
+                        <Route path="contact" element={<ContactPage />} />
+                        <Route path="search" element={<SearchPage />} />
+                        <Route path="cart" element={<CartPage />} />
+                    </Route>
                 </Routes>
             </AnimatePresence>
         </>

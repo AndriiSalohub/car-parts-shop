@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 import './Categories.scss'
 
 interface CategoriesProps {
@@ -10,7 +10,7 @@ const Categories: FC<CategoriesProps> = ({ children }) => {
     return (
         <section className="categories">
             <ul className="categories-list">
-                <NavLink to="/categories/body">
+                <Link to="/categories/body">
                     <li className="categories-list-item">
                         <img
                             src="https://themes.muffingroup.com/be/carparts/wp-content/uploads/2020/09/carparts-category-pic1-480x307.jpg"
@@ -19,7 +19,7 @@ const Categories: FC<CategoriesProps> = ({ children }) => {
                         />
                         <h2 className="categories-list-item-title">Body</h2>
                     </li>
-                </NavLink>
+                </Link>
                 <NavLink to="/categories/brakes">
                     <li className="categories-list-item">
                         <img
