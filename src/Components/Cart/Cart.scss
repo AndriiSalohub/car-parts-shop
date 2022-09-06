@@ -8,22 +8,6 @@
     padding: 30px;
     position: relative;
     &-empty{
-        display: grid;
-        grid-template-columns: 1fr 6fr 1fr;
-        align-items: center;
-        background: #ffe38b;
-        padding: 10px;
-        &-lightbulb{
-            justify-self: start;
-            width: 32px;
-            height: 32px;
-        }
-        &-title{
-            color: #9b812e;
-            font-size: 13px;
-            line-height: 19px;
-            font-family: "Inter", Helvetica, Arial, sans-serif;
-        }
         &-close{
             align-self: center;
             justify-self: end;
