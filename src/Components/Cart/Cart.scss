@@ -6,6 +6,7 @@
 
 .cart{
     padding: 30px;
+    position: relative;
     &-empty{
         display: grid;
         grid-template-columns: 1fr 6fr 1fr;
@@ -24,14 +25,18 @@
             font-family: "Inter", Helvetica, Arial, sans-serif;
         }
         &-close{
+            align-self: center;
             justify-self: end;
             width: 16px;
             height: 16px;
+            margin-bottom: 5px;
         }
     }
     &-container{
         border: 1px solid #e5e5e5;
         border-radius: 6px;
+        display: block;
+        animation: fade-in 500ms forwards;
     }
     &-item{
         padding: 10px;
@@ -87,6 +92,31 @@
         border-radius: 30px;
         cursor: pointer;
     }
+}
+
+.close {
+    border: none;
+}
+
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+
 }
 
 @media(min-width: 768px){
