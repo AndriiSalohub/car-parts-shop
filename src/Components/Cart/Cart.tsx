@@ -1,11 +1,16 @@
 import React, { FC, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { doc, setDoc } from '@firebase/firestore'
+import { motion } from 'framer-motion'
 import { useAppSelector, useAppDispatch } from '../../Hooks/hooks'
 import { clearPartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
+import { changeTotalAmount } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
 import db from '../../firebase'
 import './Cart.scss'
-import { changeTotalAmount } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
-import { useNavigate } from 'react-router-dom'
+import Box from '@mui/material/Box'
+import Alert from '@mui/material/Alert'
+import IconButton from '@mui/material/IconButton'
+import Collapse from '@mui/material/Collapse'
 
 interface CartItemProps {
     id: number
@@ -30,12 +35,18 @@ interface PartProps {
 }
 
 const Cart: FC = () => {
+    const [open, setOpen] = useState(true)
+
     const navigate = useNavigate()
 
     const [windowSize, setWindowSize] = useState(getWindowSize())
 
     const { total } = useAppSelector((state) => state.total)
     const parts = useAppSelector((state) => state.parts.parts)
+
+    // useEffect(() => {
+    //     total > 0 ? setEmptyOpen(false) : setEmptyOpen(true)
+    // }, [])
 
     useEffect(() => {
         function handleWindowResize() {
@@ -51,28 +62,27 @@ const Cart: FC = () => {
 
     return (
         <section className="cart">
-            <div className="cart-container">
+            <motion.div
+                className={open ? 'cart-container' : 'cart-container close'}
+            >
                 {total === 0 ? (
-                    <div
-                        className="cart-empty"
-                        style={{
-                            opacity: total ? 0 : 1,
-                        }}
-                    >
-                        <img
-                            src="https://i.ibb.co/VLTdmNX/bulb-3.png"
-                            alt="lightbulb"
-                            className="cart-empty-lightbulb"
-                        />
-                        <h2 className="cart-empty-title">
-                            Your cart is currently empty.
-                        </h2>
-                        <img
-                            src="https://i.ibb.co/K7t92ng/close-1.png"
-                            alt="close"
-                            className="cart-empty-close"
-                        />
-                    </div>
+                    <Box sx={{ width: '100%' }}>
+                        <Collapse in={open}>
+                            <Alert
+                                action={
+                                    <img
+                                        src="https://i.ibb.co/K7t92ng/close-1.png"
+                                        alt="close"
+                                        className="cart-empty-close"
+                                        onClick={() => setOpen(false)}
+                                    />
+                                }
+                                severity="warning"
+                            >
+                                Your cart is currently empty.
+                            </Alert>
+                        </Collapse>
+                    </Box>
                 ) : windowSize.innerWidth > 768 ? (
                     <>
                         <div className="cart-top-infromation">
@@ -144,7 +154,7 @@ const Cart: FC = () => {
                             )
                         )
                 )}
-            </div>
+            </motion.div>
             <button
                 className="cart-return-to-shop-btn"
                 onClick={() => navigate('/shop')}
