@@ -20,6 +20,7 @@ import FilteredCategoriesPage from '../../Pages/FilteredCategoriesPage'
 import CartPage from '../../Pages/CartPage'
 import { getTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
 import Layout from '../../Components/Layout/Layout'
+import ProductPage from '../../Pages/ProductPage'
 
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
@@ -65,6 +66,10 @@ const App: FC = () => {
                             element={<FilteredCategoriesPage />}
                         />
                         <Route path="shop" element={<ShopPage />} />
+                        <Route
+                            path="shop/:productCode"
+                            element={<ProductPage />}
+                        />
                         <Route path="contact" element={<ContactPage />} />
                         <Route path="search" element={<SearchPage />} />
                         <Route path="cart" element={<CartPage />} />
