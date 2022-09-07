@@ -22,60 +22,6 @@
         display: block;
         animation: fade-in 500ms forwards;
     }
-    &-item{
-        padding: 10px;
-        border-bottom: 1px solid #e5e5e5;
-        &-title{
-            &-title{
-                color: #ff5f1e;
-                font-weight: 700;
-            }
-        }
-        &-containers{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            margin-bottom: 10px;
-            padding: 10px 0;
-            border-bottom: 1px solid #e5e5e5;
-            &-information{
-                justify-self: end;
-                font-size: 14px;
-                font-family: 'Inter', sans-serif;
-            }
-            &-names{
-                font-size: 14px;
-                font-weight: 700;
-                font-family: 'Inter', sans-serif;
-            }
-        }
-        &-delete-btn{
-            display: block;
-            background-color: #ff5f1e;
-            border: none;
-            cursor: pointer;
-            outline: none;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            padding: 15px;
-            border-radius: 12px;
-            margin-left: 85%;
-        }
-    }
-    &-return-to-shop-btn{
-        margin-top: 20px;
-        color: #ffffff;
-        background-color: #ff5f1e;
-        border-color: transparent;
-        font-family: Comfortaa;
-        font-size: 14px;
-        line-height: 14px;
-        font-weight: 700;
-        letter-spacing: 2px;
-        padding: 15px 30px 15px 30px;
-        border-width: 0px;
-        border-radius: 30px;
-        cursor: pointer;
-    }
 }
 
 .close {
@@ -111,11 +57,6 @@
             &-title{
                 font-size: 14px;
                 line-height: 26px;
-            }
-        }
-        &-item{
-            &-delete-btn{
-                margin-left: 94%;
             }
         }
     }
@@ -156,54 +97,12 @@
                 justify-self: center;
             }
         }
-        &-item{
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            align-items: center;
-            &-img{
-                padding: 20px;
-                width: 100%;
-                height: 100%;
-                background-position: center center;
-                justify-self: center;
-            }
-            &-title{
-                color: #ff5f1e;
-                font-size: 14px;
-                font-weight: 700;
-                font-family: 'Inter', sans-serif;
-                justify-self: center;
-            }
-            &-text-content{
-                font-size: 18px;
-                font-family: 'Inter', sans-serif;
-                justify-self: center;
-            }
-            &-quantity{
-                background-color: #e5e5e5;
-                padding: 20px;
-                border-radius: 12px;
-            }
-            &-delete-btn{
-                margin: 0;
-                width: 40%;
-                font-size: 18px;
-                font-family: 'Inter', sans-serif;
-                justify-self: center;
-            }
-        }
     }
 }
 
 @media(min-width: 1440px){
     .cart{
         padding: 30px 100px;
-        &-item{
-            &-img{
-                height: 160px;
-                width: 160px;
-            }
-        }
     }
 }
 
