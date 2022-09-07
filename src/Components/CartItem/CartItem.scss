@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.cart-item{
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+    &-title{
+        &-title{
+            color: #ff5f1e;
+            font-weight: 700;
+        }
+    }
+    &-containers{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 10px;
+        padding: 10px 0;
+        border-bottom: 1px solid #e5e5e5;
+        &-information{
+            justify-self: end;
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+        &-names{
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+        }
+    }
+    &-delete-btn{
+        display: block;
+        background-color: #ff5f1e;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        color: #fff;
+        font-family: 'Inter', sans-serif;
+        padding: 15px;
+        border-radius: 12px;
+        margin-left: 85%;
+    }
+}
+
+@media(min-width: 768px){
+    .cart-item{
+        &-delete-btn{
+            margin-left: 94%;
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .cart-item{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+        &-img{
+            padding: 20px;
+            width: 100%;
+            height: 100%;
+            background-position: center center;
+            justify-self: center;
+        }
+        &-title{
+            color: #ff5f1e;
+            font-size: 14px;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            justify-self: center;
+        }
+        &-text-content{
+            font-size: 18px;
+            font-family: 'Inter', sans-serif;
+            justify-self: center;
+        }
+        &-quantity{
+            background-color: #e5e5e5;
+            padding: 20px;
+            border-radius: 12px;
+        }
+        &-delete-btn{
+            margin: 0;
+            width: 40%;
+            font-size: 18px;
+            font-family: 'Inter', sans-serif;
+            justify-self: center;
+        }
+    }
+}
+
+@media(min-width: 1440px){
+    .cart-item{
+        &-img{
+            height: 160px;
+            width: 160px;
+        }
+    }
+}
+
+@media(min-width: 1660px){
+    
+}
