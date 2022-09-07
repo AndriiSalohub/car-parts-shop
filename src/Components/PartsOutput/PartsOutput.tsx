@@ -5,6 +5,7 @@ import db from '../../firebase'
 import './PartsOutput.scss'
 import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
 import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
+import { NavLink } from 'react-router-dom'
 
 interface PartsItemProps {
     id: number
@@ -178,13 +179,15 @@ const PartsItem: FC<PartsItemProps> = ({
                             className="parts-item-img-buttons-btn-img"
                         />
                     </button>
-                    <button className="parts-item-img-buttons-btn parts-item-img-buttons-btn-link">
-                        <img
-                            src="https://i.ibb.co/C7qWy3r/link.png"
-                            alt="link"
-                            className="parts-item-img-buttons-btn-img"
-                        />
-                    </button>
+                    <NavLink to={`/shop/${productCode}`}>
+                        <button className="parts-item-img-buttons-btn parts-item-img-buttons-btn-link">
+                            <img
+                                src="https://i.ibb.co/C7qWy3r/link.png"
+                                alt="link"
+                                className="parts-item-img-buttons-btn-img"
+                            />
+                        </button>
+                    </NavLink>
                 </div>
             </div>
             <h2 className="parts-item-title">{title}</h2>
