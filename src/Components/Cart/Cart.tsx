@@ -3,6 +3,7 @@ import { useAppSelector } from '../../Hooks/hooks'
 import CartItem from '../CartItem/CartItem'
 import EmptyCartAlert from '../EmptyCartAlert/EmptyCartAlert'
 import ReturnToShop from '../ReaturnToShop/ReturnToShop'
+import ToCheckout from '../ToCheckout/ToCheckout'
 import './Cart.scss'
 
 interface PartProps {
@@ -113,7 +114,16 @@ const Cart: FC = () => {
                         )
                 )}
             </div>
-            <ReturnToShop />
+            <div
+                className={
+                    total > 0
+                        ? 'cart-information active-cart-information'
+                        : 'cart-information'
+                }
+            >
+                <ReturnToShop />
+                <ToCheckout />
+            </div>
         </section>
     )
 }
