@@ -204,7 +204,7 @@ const PartsItem: FC<PartsItemProps> = ({
                         <span>£{discountPrice}</span>
                     </>
                 ) : (
-                    <span>£{price}</span>
+                    <span>£{price.toFixed(2)}</span>
                 )}
             </p>
             <p className="parts-item-product-code parts-item-product-information">
