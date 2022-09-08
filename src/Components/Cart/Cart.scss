@@ -98,6 +98,11 @@
             }
         }
     }
+
+    .active-cart-information{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 @media(min-width: 1440px){
