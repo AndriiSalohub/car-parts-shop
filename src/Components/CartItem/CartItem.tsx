@@ -71,6 +71,8 @@ const CartItem: FC<CartItemProps> = ({
         dispatch(changeTotalAmount(amount))
     }
 
+    console.log(discount ? title : 'no')
+
     return (
         <div className="cart-item">
             {window.innerWidth > 768 ? (
@@ -78,13 +80,13 @@ const CartItem: FC<CartItemProps> = ({
                     <img src={image} alt="part" className="cart-item-img" />
                     <h2 className="cart-item-title">{title}</h2>
                     <p className="cart-item-price cart-item-text-content">
-                        £{price}
+                        £{discount ? discountPrice : price}
                     </p>
                     <p className="cart-item-quantity cart-item-text-content">
                         {amount}
                     </p>
                     <p className="cart-item-total cart-item-text-content">
-                        £{amount * price}
+                        £{discount ? amount * discountPrice : amount * price}
                     </p>
                     <button
                         className="cart-item-delete-btn"
@@ -127,7 +129,7 @@ const CartItem: FC<CartItemProps> = ({
                             Total:
                         </p>
                         <p className="cart-item-total-price cart-item-containers-information">
-                            {amount * price}
+                            {discount ? amount * discountPrice : amount * price}
                         </p>
                     </div>
                     <button
