@@ -13,6 +13,7 @@ const LatestProducts: FC = () => {
         productCode: string
         manufacturer: string
         image: string
+        docId: string
     }> = useAppSelector((state) => state.parts.parts)
 
     const latestProducts: Array<{
@@ -24,6 +25,7 @@ const LatestProducts: FC = () => {
         productCode: string
         manufacturer: string
         image: string
+        docId: string
     }> = []
 
     for (let i = 0; i < allProducts.length - 1; i++) {
