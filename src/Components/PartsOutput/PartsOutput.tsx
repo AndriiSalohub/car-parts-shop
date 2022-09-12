@@ -1,12 +1,12 @@
 import React, { FC } from 'react'
 import { doc, setDoc } from '@firebase/firestore'
 import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
-import db from '../../firebase'
-import './PartsOutput.scss'
 import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
 import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
 import { NavLink } from 'react-router-dom'
 import { setCurrentPageIdByUser } from '../../ReduxToolkit/Slices/CurrentPageId/CurrentPageId'
+import db from '../../firebase'
+import './PartsOutput.scss'
 
 interface PartsItemProps {
     id: number

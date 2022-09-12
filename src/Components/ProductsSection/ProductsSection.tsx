@@ -1,10 +1,11 @@
 import React, { FC } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { doc, setDoc } from '@firebase/firestore'
 import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
 import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
 import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
+import { setCurrentPageIdByUser } from '../../ReduxToolkit/Slices/CurrentPageId/CurrentPageId'
 import db from '../../firebase'
 import './ProductsSection.scss'
 
@@ -99,6 +100,7 @@ const ProductItem: FC<ProductItemProps> = ({
         amount: number
     }> = useAppSelector((state) => state.parts.parts)
     const totalAmount = useAppSelector((state) => state.total)
+    const currentPageId = useAppSelector((state) => state.currentPageId)
 
     const handleBuy: Function = async (id: number, docId: string) => {
         const currentAmount = parts.find((part) => part.id === id)?.amount
@@ -117,6 +119,13 @@ const ProductItem: FC<ProductItemProps> = ({
         const payload = { total: total + 1 }
         await setDoc(docRef, payload)
         dispatch(increaseTotal())
+    }
+
+    const setCurrentPageId = async (id: number, docId: string) => {
+        const docRef = doc(db, 'currentPageId', docId)
+        const payload = { currentPageId: id }
+        await setDoc(docRef, payload)
+        dispatch(setCurrentPageIdByUser(id))
     }
 
     return (
@@ -144,13 +153,18 @@ const ProductItem: FC<ProductItemProps> = ({
                             }}
                         />
                     </button>
-                    <button className="product-item-img-container-buttons-btn product-item-img-container-buttons-btn-link">
-                        <img
-                            src="https://i.ibb.co/C7qWy3r/link.png"
-                            alt="link"
-                            className="product-item-img-container-buttons-btn-img"
-                        />
-                    </button>
+                    <NavLink
+                        to={`/shop/${productCode}`}
+                        onClick={() => setCurrentPageId(id, currentPageId.id)}
+                    >
+                        <button className="product-item-img-container-buttons-btn product-item-img-container-buttons-btn-link">
+                            <img
+                                src="https://i.ibb.co/C7qWy3r/link.png"
+                                alt="link"
+                                className="product-item-img-container-buttons-btn-img"
+                            />
+                        </button>
+                    </NavLink>
                 </div>
             </div>
             <h2 className="product-item-title">{title}</h2>
