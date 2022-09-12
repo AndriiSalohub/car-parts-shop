@@ -21,6 +21,7 @@ import CartPage from '../../Pages/CartPage'
 import { getTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
 import Layout from '../../Components/Layout/Layout'
 import ProductPage from '../../Pages/ProductPage'
+import { getCurrentPageId } from '../../ReduxToolkit/Slices/CurrentPageId/CurrentPageId'
 
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
@@ -34,6 +35,7 @@ const App: FC = () => {
         dispatch(getFilterTerm())
         dispatch(getSearchTerm())
         dispatch(getTotal())
+        dispatch(getCurrentPageId())
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
