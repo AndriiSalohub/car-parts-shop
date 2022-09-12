@@ -1,6 +1,11 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { doc, setDoc } from '@firebase/firestore'
+import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
+import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
+import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
+import db from '../../firebase'
 import './ProductsSection.scss'
 
 interface ProductsSectionProps {
@@ -14,10 +19,13 @@ interface ProductsSectionProps {
         productCode: string
         manufacturer: string
         image: string
+        docId: string
     }>
 }
 
 interface ProductItemProps {
+    id: number
+    docId: string
     title: string
     price: number
     discount: boolean
@@ -51,9 +59,12 @@ const ProductsSection: FC<ProductsSectionProps> = ({
                         productCode,
                         manufacturer,
                         image,
+                        docId,
                     }) => (
                         <ProductItem
                             key={id}
+                            id={id}
+                            docId={docId}
                             title={title}
                             price={price}
                             discount={discount}
@@ -77,7 +88,37 @@ const ProductItem: FC<ProductItemProps> = ({
     productCode,
     manufacturer,
     image,
+    id,
+    docId,
 }) => {
+    const dispatch: Function = useAppDispatch()
+
+    const parts: Array<{
+        id: number
+        docId: string
+        amount: number
+    }> = useAppSelector((state) => state.parts.parts)
+    const totalAmount = useAppSelector((state) => state.total)
+
+    const handleBuy: Function = async (id: number, docId: string) => {
+        const currentAmount = parts.find((part) => part.id === id)?.amount
+        const docRef = doc(db, 'parts', docId)
+        const payload = {
+            ...parts.find((part) => part.id === id),
+            amount: currentAmount === undefined ? 0 + 1 : currentAmount + 1,
+        }
+        delete payload.docId
+        await setDoc(docRef, payload)
+        dispatch(changePartAmount(id))
+    }
+
+    const changeTotal: Function = async (total: number, totalId: string) => {
+        const docRef = doc(db, 'total', totalId)
+        const payload = { total: total + 1 }
+        await setDoc(docRef, payload)
+        dispatch(increaseTotal())
+    }
+
     return (
         <div className="product-item">
             <div className="product-item-img-container">
@@ -94,6 +135,13 @@ const ProductItem: FC<ProductItemProps> = ({
                             src="https://i.ibb.co/WyKfWDj/shopping-cart.png"
                             alt="cart"
                             className="product-item-img-container-buttons-btn-img"
+                            onClick={async () => {
+                                await handleBuy(id, docId)
+                                await changeTotal(
+                                    totalAmount.total,
+                                    totalAmount.id
+                                )
+                            }}
                         />
                     </button>
                     <button className="product-item-img-container-buttons-btn product-item-img-container-buttons-btn-link">

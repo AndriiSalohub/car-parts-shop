@@ -15,6 +15,7 @@ const SalesProducts: FC = () => {
         productCode: string
         manufacturer: string
         image: string
+        docId: string
     }> = []
 
     allProducts.forEach(({ discount }, index) => {
