@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+.product-page-item{
+    padding: 0px 30px;
+    &-image{
+        width: 100%;
+    }
+    &-information{
+        font-size: 13px;
+        line-height: 19px;
+        font-family: "Inter", Helvetica, Arial, sans-serif;
+        &-title{
+            margin-top: 15px;
+            font-size: 35px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            font-family: 'Comfortaa', cursive;
+        }
+        &-line{
+            width: 20%;
+            border-bottom: 1px solid #ebebeb;
+        }
+        &-price{
+            color: #ff5f1e;
+            margin-top: 20px;
+            margin-bottom: 25px;
+            font-size: 35px;
+            font-family: "Inter", Helvetica, Arial, sans-serif;
+        }
+        &-add-btn{
+            display: block;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Comfortaa', cursive;
+            margin: 15px auto;
+            padding: 15px 30px 15px 30px;
+            color: #ffffff;
+            background-color: #ff5f1e;
+            border-radius: 24px;
+            border: none;
+            line-height: 14px;
+            width: 70%;
+        }
+        &-categories{
+            font-size: 14px;
+            line-height: 26px;
+            font-family: "Inter", Helvetica, Arial, sans-serif;
+            border-bottom: 1px solid #ebebeb;
+            padding-bottom: 10px;
+            &-title{
+                color: #a8a8a8;
+            }
+            &-categorie{
+                color: #ff5f1e;
+                &:hover{
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+        }
+        &-share{
+            font-size: 16px;
+            line-height: 26px;
+            font-family: "Inter", Helvetica, Arial, sans-serif;
+            & a{
+                padding-left: 5px;
+            }
+        }
+    }
+}
+
+@media(min-width: 768px){
+    .product-page-item{
+        padding: 0 60px;
+        &-information{
+            font-size: 14px;
+            line-height: 26px;
+            &-title{
+                font-size: 35px;
+                line-height: 40px;
+            }
+            &-line{
+                width: 15%;
+            }
+            &-add-btn{
+                margin: 10px 0px;
+                width: 40%;
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px){
+    .product-page-item{
+        padding: 0 75px;
+        &-container{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 20px;
+        }
+        &-image{
+            height: 90%;
+        }
+        &-information{
+            font-size: 16px;
+            line-height: 30px;
+            &-title{
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+
+@media(min-width: 1440px){
+    .product-page-item{
+        padding: 0 100px;
+    }
+}
+
+
+@media(min-width: 1660px){
+    .product-page-item{
+        padding: 0 300px;
+    }
+}
