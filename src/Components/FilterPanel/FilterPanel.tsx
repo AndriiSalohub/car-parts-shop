@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { ChangeEvent, FC } from 'react'
 import { doc, setDoc } from '@firebase/firestore'
 import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
 import { editFilterTerm } from '../../ReduxToolkit/Slices/FilterSlice/FilterSlice'
@@ -12,14 +12,13 @@ const FilterPanel: FC = () => {
     const filter = useAppSelector((state) => state.filter)
 
     const handleFilterChange: Function = async (
-        e: React.SyntheticEvent,
+        e: ChangeEvent<HTMLSelectElement>,
         id: string
     ) => {
-        let target = e.target as HTMLInputElement
         const docRef = doc(db, 'filter', id)
-        const payload = { filterterm: target.value }
+        const payload = { filterterm: e.target.value }
         await setDoc(docRef, payload)
-        dispatch(editFilterTerm(target.value))
+        dispatch(editFilterTerm(e.target.value))
     }
 
     return (

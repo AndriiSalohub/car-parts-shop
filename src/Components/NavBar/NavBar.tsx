@@ -1,4 +1,4 @@
-import React, { useState, FC } from 'react'
+import React, { useState, FC, ChangeEvent } from 'react'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { Squash as Hamburger } from 'hamburger-react'
 import Drawer from 'react-modern-drawer'
@@ -36,14 +36,13 @@ const NavBar: FC = () => {
     }
 
     const handleSearchChange: Function = async (
-        e: React.SyntheticEvent,
+        e: ChangeEvent<HTMLInputElement>,
         id: string
     ) => {
-        let target = e.target as HTMLInputElement
         const docRef = doc(db, 'search', id)
-        const payload = { searchTerm: target.value }
+        const payload = { searchTerm: e.target.value }
         await setDoc(docRef, payload)
-        dispatch(editSearchTerm(target.value))
+        dispatch(editSearchTerm(e.target.value))
     }
 
     const routeChange: Function = (e: any) => {
