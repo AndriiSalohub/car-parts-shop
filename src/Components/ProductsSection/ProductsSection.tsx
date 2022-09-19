@@ -176,15 +176,15 @@ const ProductItem: FC<ProductItemProps> = ({
                             textDecoration: 'line-through',
                         }}
                     >
-                        £{price}
+                        £{price.toFixed(2)}
                     </span>{' '}
                     <span className="price-with-discount">
-                        £{discountPrice}
+                        £{discountPrice.toFixed(2)}
                     </span>
                 </p>
             ) : (
                 <p className="product-item-price">
-                    <span className="default-price">£{price}</span>{' '}
+                    <span className="default-price">£{price.toFixed(2)}</span>{' '}
                 </p>
             )}
             <span

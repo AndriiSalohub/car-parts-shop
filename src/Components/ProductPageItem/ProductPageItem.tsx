@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAppSelector } from '../../Hooks/hooks'
 import './ProductPageItem.scss'
 
@@ -106,6 +106,8 @@ const ProductPageItem = () => {
                     price,
                     productCode,
                     manufacturer,
+                    discount,
+                    discountPrice,
                 }) => {
                     if (id === currentPageId) {
                         return (
@@ -120,7 +122,10 @@ const ProductPageItem = () => {
                                     </h2>
                                     <div className="product-page-item-information-line"></div>
                                     <p className="product-page-item-information-price">
-                                        £{price}
+                                        £
+                                        {discount
+                                            ? discountPrice.toFixed(2)
+                                            : price.toFixed(2)}
                                     </p>
                                     <p className="product-page-item-information-product-code">
                                         Product Code: {productCode}

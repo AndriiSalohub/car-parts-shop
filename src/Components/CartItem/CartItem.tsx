@@ -80,13 +80,17 @@ const CartItem: FC<CartItemProps> = ({
                     <img src={image} alt="part" className="cart-item-img" />
                     <h2 className="cart-item-title">{title}</h2>
                     <p className="cart-item-price cart-item-text-content">
-                        £{discount ? discountPrice : price}
+                        £
+                        {discount ? discountPrice.toFixed(2) : price.toFixed(2)}
                     </p>
                     <p className="cart-item-quantity cart-item-text-content">
                         {amount}
                     </p>
                     <p className="cart-item-total cart-item-text-content">
-                        £{discount ? amount * discountPrice : amount * price}
+                        £
+                        {discount
+                            ? (amount * discountPrice).toFixed(2)
+                            : (amount * price).toFixed(2)}
                     </p>
                     <button
                         className="cart-item-delete-btn"
@@ -113,7 +117,9 @@ const CartItem: FC<CartItemProps> = ({
                             Price:
                         </p>
                         <h2 className="cart-item-price-title cart-item-containers-information">
-                            {discount ? discountPrice : price}
+                            {discount
+                                ? discountPrice.toFixed(2)
+                                : price.toFixed(2)}
                         </h2>
                     </div>
                     <div className="cart-item-quantity cart-item-containers">
@@ -129,7 +135,9 @@ const CartItem: FC<CartItemProps> = ({
                             Total:
                         </p>
                         <p className="cart-item-total-price cart-item-containers-information">
-                            {discount ? amount * discountPrice : amount * price}
+                            {discount
+                                ? (amount * discountPrice).toFixed(2)
+                                : (amount * price).toFixed(2)}
                         </p>
                     </div>
                     <button
