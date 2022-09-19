@@ -38,7 +38,7 @@ const ToCheckout: FC = () => {
                         Subtotal:
                     </h3>
                     <p className="cart-checkout-subtotal-information cart-checkout-container-information">
-                        £{totalPrice}
+                        £{totalPrice.toFixed(2)}
                     </p>
                 </div>
                 <div className="cart-checkout-total">
@@ -46,7 +46,7 @@ const ToCheckout: FC = () => {
                         Total:
                     </h3>
                     <p className="cart-checkout-total-information cart-checkout-container-information">
-                        £{totalPrice}
+                        £{totalPrice.toFixed(2)}
                     </p>
                 </div>
             </div>
