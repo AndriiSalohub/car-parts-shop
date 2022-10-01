@@ -1,85 +1,25 @@
+import React, { FC, useEffect } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppSelector } from '../../Hooks/hooks'
 import './ProductPageItem.scss'
+import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
 
-function ImageMagnifier({
-    src,
-    width,
-    height,
-    magnifierHeight = 150,
-    magnifieWidth = 150,
-    zoomLevel = 1.5,
-}: {
-    src: string
-    width?: string
-    height?: string
-    magnifierHeight?: number
-    magnifieWidth?: number
-    zoomLevel?: number
-}) {
-    const [[x, y], setXY] = useState([0, 0])
-    const [[imgWidth, imgHeight], setSize] = useState([0, 0])
-    const [showMagnifier, setShowMagnifier] = useState(false)
-    return (
-        <div
-            style={{
-                position: 'relative',
-                height: height,
-                width: width,
-            }}
-        >
-            <img
-                src={src}
-                style={{ height: height, width: width }}
-                onMouseEnter={(e) => {
-                    const elem = e.currentTarget
-                    const { width, height } = elem.getBoundingClientRect()
-                    setSize([width, height])
-                    setShowMagnifier(true)
-                }}
-                onMouseMove={(e) => {
-                    const elem = e.currentTarget
-                    const { top, left } = elem.getBoundingClientRect()
-                    const x = e.pageX - left - window.pageXOffset
-                    const y = e.pageY - top - window.pageYOffset
-                    setXY([x, y])
-                }}
-                onMouseLeave={() => {
-                    setShowMagnifier(false)
-                }}
-                alt={'img'}
-            />
+// type PartsProps = {
+//     parts: {
+//         id: number
+//         image: string
+//         title: string
+//         price: number
+//         discount: boolean
+//         discountPrice: number
+//         productCode: string
+//         manufacturer: string
+//         categories: Array<string>
+//     }[]
+// }
 
-            <div
-                style={{
-                    display: showMagnifier ? '' : 'none',
-                    position: 'absolute',
-                    pointerEvents: 'none',
-                    height: `${magnifierHeight}px`,
-                    width: `${magnifieWidth}px`,
-                    top: `${y - magnifierHeight / 2}px`,
-                    left: `${x - magnifieWidth / 2}px`,
-                    border: '1px solid lightgray',
-                    backgroundColor: 'white',
-                    backgroundImage: `url('${src}')`,
-                    backgroundRepeat: 'no-repeat',
-                    backgroundSize: `${imgWidth * zoomLevel}px ${
-                        imgHeight * zoomLevel
-                    }px`,
-                    backgroundPositionX: `${
-                        -x * zoomLevel + magnifieWidth / 2
-                    }px`,
-                    backgroundPositionY: `${
-                        -y * zoomLevel + magnifierHeight / 2
-                    }px`,
-                }}
-            ></div>
-        </div>
-    )
-}
-
-const ProductPageItem = () => {
+const ProductPageItem: FC = () => {
     const parts: Array<{
         id: number
         image: string
@@ -91,9 +31,44 @@ const ProductPageItem = () => {
         manufacturer: string
         categories: Array<string>
     }> = useAppSelector((state) => state.parts.parts)
+    // const parts: PartsProps = useAppSelector((state) => state.parts.parts)
     const { currentPageId } = useAppSelector((state) => state.currentPageId)
 
     const navigate = useNavigate()
+
+    const [imageTramslate, setImageTramslate] = useState({
+        x: -50,
+        y: -50,
+    })
+
+    const [imageScale, setImageScale] = useState(false)
+
+    const handleMouseMove = (e: any) => {
+        let clientX = e.clientX - e.target.offsetLeft
+        let clientY = e.clientX - e.target.offsetTop
+
+        const mWidth = e.target.offsetWidth
+        const mHeight = e.target.offsetHeight
+
+        clientX = (clientX / mWidth) * 100
+        clientY = (clientY / mHeight) * 100
+
+        setImageTramslate((prevState: any) => ({
+            ...prevState,
+            x: clientX,
+            y: clientY,
+        }))
+        setImageScale(() => true)
+    }
+
+    const handleMouseLeave = (e: any) => {
+        setImageTramslate((prevState: any) => ({
+            ...prevState,
+            x: 50,
+            y: 50,
+        }))
+        setImageScale(() => false)
+    }
 
     return (
         <div className="product-page-item">
@@ -115,7 +90,24 @@ const ProductPageItem = () => {
                                 className="product-page-item-container"
                                 key={id}
                             >
-                                <ImageMagnifier width={'100%'} src={image} />
+                                <div
+                                    className="product-page-item-image-container"
+                                    onMouseMove={(e) => handleMouseMove(e)}
+                                    onMouseLeave={(e) => handleMouseLeave(e)}
+                                >
+                                    <img
+                                        className="product-page-item-image"
+                                        src={image}
+                                        alt="product-item-img"
+                                        style={{
+                                            transform: `translate(-${
+                                                imageTramslate.x
+                                            }%, -${imageTramslate.y}%) scale(${
+                                                imageScale ? 2 : 1
+                                            })`,
+                                        }}
+                                    />
+                                </div>
                                 <div className="product-page-item-information">
                                     <h2 className="product-page-item-information-title">
                                         {title}
