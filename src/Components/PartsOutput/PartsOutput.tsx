@@ -5,36 +5,9 @@ import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlic
 import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
 import { NavLink } from 'react-router-dom'
 import { setCurrentPageIdByUser } from '../../ReduxToolkit/Slices/CurrentPageId/CurrentPageId'
+import { PartsOutputProps, PartsItemProps } from '../../Types/PartsProps'
 import db from '../../firebase'
 import './PartsOutput.scss'
-
-interface PartsItemProps {
-    id: number
-    title: string
-    price: number
-    discount: boolean
-    discountPrice: number
-    productCode: string
-    image: string
-    manufacturer: string
-    docId: string
-}
-
-interface PartsOutputProps {
-    array: Array<{
-        id: number
-        title: string
-        price: number
-        discount: boolean
-        discountPrice: number
-        productCode: string
-        manufacturer: string
-        image: string
-        popularity: number
-        averageRating: number
-        docId: string
-    }>
-}
 
 const PartsOutput: FC<PartsOutputProps> = ({ array }) => {
     const filterTerm = useAppSelector((state) => state.filter.filterTerm)

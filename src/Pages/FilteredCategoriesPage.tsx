@@ -18,7 +18,7 @@ const FilteredCategoriesPage: FC = () => {
         image: string
         popularity: number
         averageRating: number
-        categories: any
+        categories: Array<string>
         docId: string
         amount: number
     }> = useAppSelector((state) => state.parts.parts)

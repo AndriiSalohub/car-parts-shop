@@ -1,23 +1,8 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppSelector } from '../../Hooks/hooks'
 import './ProductPageItem.scss'
-import 'react-inner-image-zoom/lib/InnerImageZoom/styles.css'
-
-// type PartsProps = {
-//     parts: {
-//         id: number
-//         image: string
-//         title: string
-//         price: number
-//         discount: boolean
-//         discountPrice: number
-//         productCode: string
-//         manufacturer: string
-//         categories: Array<string>
-//     }[]
-// }
 
 const ProductPageItem: FC = () => {
     const parts: Array<{
@@ -31,12 +16,14 @@ const ProductPageItem: FC = () => {
         manufacturer: string
         categories: Array<string>
     }> = useAppSelector((state) => state.parts.parts)
-    // const parts: PartsProps = useAppSelector((state) => state.parts.parts)
     const { currentPageId } = useAppSelector((state) => state.currentPageId)
 
     const navigate = useNavigate()
 
-    const [imageTramslate, setImageTramslate] = useState({
+    const [imageTramslate, setImageTramslate] = useState<{
+        x: number
+        y: number
+    }>({
         x: -50,
         y: -50,
     })
@@ -61,7 +48,7 @@ const ProductPageItem: FC = () => {
         setImageScale(() => true)
     }
 
-    const handleMouseLeave = (e: any) => {
+    const handleMouseLeave = () => {
         setImageTramslate((prevState: any) => ({
             ...prevState,
             x: 50,
@@ -93,7 +80,7 @@ const ProductPageItem: FC = () => {
                                 <div
                                     className="product-page-item-image-container"
                                     onMouseMove={(e) => handleMouseMove(e)}
-                                    onMouseLeave={(e) => handleMouseLeave(e)}
+                                    onMouseLeave={(e) => handleMouseLeave()}
                                 >
                                     <img
                                         className="product-page-item-image"
