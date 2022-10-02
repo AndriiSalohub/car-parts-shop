@@ -1,8 +1,8 @@
 import React, { FC } from 'react'
 import { motion } from 'framer-motion'
-import './Welcome.scss'
 import { useAppDispatch } from '../../Hooks/hooks'
 import { setPopupOpen } from '../../ReduxToolkit/Slices/PopupSlice/PopupSlice'
+import './Welcome.scss'
 
 const Welcome: FC = () => {
     const dispatch: Function = useAppDispatch()

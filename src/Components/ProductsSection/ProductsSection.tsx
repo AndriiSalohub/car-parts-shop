@@ -6,34 +6,13 @@ import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
 import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
 import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
 import { setCurrentPageIdByUser } from '../../ReduxToolkit/Slices/CurrentPageId/CurrentPageId'
+import { PartsItemProps } from '../../Types/PartsProps'
 import db from '../../firebase'
 import './ProductsSection.scss'
 
 interface ProductsSectionProps {
     sectionTitle: string
-    products: Array<{
-        id: number
-        title: string
-        price: number
-        discount: boolean
-        discountPrice: number
-        productCode: string
-        manufacturer: string
-        image: string
-        docId: string
-    }>
-}
-
-interface ProductItemProps {
-    id: number
-    docId: string
-    title: string
-    price: number
-    discount: boolean
-    discountPrice: number
-    productCode: string
-    manufacturer: string
-    image: string
+    products: Array<PartsItemProps>
 }
 
 const ProductsSection: FC<ProductsSectionProps> = ({
@@ -81,7 +60,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({
     )
 }
 
-const ProductItem: FC<ProductItemProps> = ({
+const ProductItem: FC<PartsItemProps> = ({
     title,
     price,
     discount,

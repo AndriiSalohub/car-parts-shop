@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import './UsefulInformation.scss'
 
 const UsefulInformation: FC = () => {
-    const [isBigPaddingNeed, setBigPaddingNeed] = useState(true)
+    const [isBigPaddingNeed, setBigPaddingNeed] = useState<boolean>(true)
 
     const location = useLocation()
 

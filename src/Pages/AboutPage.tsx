@@ -12,8 +12,8 @@ import UsefulInformation from '../Components/UsefulInformation/UsefulInformation
 
 const AboutPage: FC = () => {
     const [windowSize, setWindowSize] = useState(getWindowSize())
-    const [playerWidth, setPlayerWidth] = useState(0)
-    const [playerHeight, setPlayerHeight] = useState(0)
+    const [playerWidth, setPlayerWidth] = useState<number>(0)
+    const [playerHeight, setPlayerHeight] = useState<number>(0)
     useEffect(() => {
         function handleWindowResize() {
             setWindowSize(getWindowSize())

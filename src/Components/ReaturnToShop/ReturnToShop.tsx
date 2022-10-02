@@ -8,7 +8,6 @@ const ReturnToShop: FC = () => {
 
     const navigate = useNavigate()
 
-    console.log(total < 0)
     return (
         <button
             className="cart-return-to-shop-btn"
