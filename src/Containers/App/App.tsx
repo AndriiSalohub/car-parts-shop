@@ -26,7 +26,7 @@ import { getCurrentPageId } from '../../ReduxToolkit/Slices/CurrentPageId/Curren
 const App: FC = () => {
     const dispatch: Function = useAppDispatch()
 
-    const search = useAppSelector((state) => state.search)
+    // const search = useAppSelector((state) => state.search)
 
     const location = useLocation()
 
