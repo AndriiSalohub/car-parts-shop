@@ -114,9 +114,7 @@ const CartItem: FC<CartItemProps> = ({
                             Price:
                         </p>
                         <h2 className="cart-item-price-title cart-item-containers-information">
-                            {discount
-                                ? discountPrice.toFixed(2)
-                                : price.toFixed(2)}
+                            {discount ? discountPrice : price.toFixed(2)}
                         </h2>
                     </div>
                     <div className="cart-item-quantity cart-item-containers">
