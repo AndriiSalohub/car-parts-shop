@@ -1,8 +1,8 @@
-import React, { FC } from 'react'
-import { useAppSelector } from '../Hooks/hooks'
+import { FC } from 'react'
 import Search from '../Components/Search/Search'
 import Subheader from '../Components/Subheader/Subheader'
 import UsefulInformation from '../Components/UsefulInformation/UsefulInformation'
+import { useAppSelector } from '../Hooks/hooks'
 
 const SearchPage: FC = () => {
     const parts: Array<{

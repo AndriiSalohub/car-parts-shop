@@ -1,14 +1,14 @@
-import React, { useState, FC, ChangeEvent } from 'react'
-import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { doc, setDoc } from '@firebase/firestore'
+import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { Squash as Hamburger } from 'hamburger-react'
+import { ChangeEvent, FC, useState } from 'react'
 import Drawer from 'react-modern-drawer'
-import { useTransform, motion, useViewportScroll } from 'framer-motion'
+import 'react-modern-drawer/dist/index.css'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
 import { editSearchTerm } from '../../ReduxToolkit/Slices/SearchSlice/SearchSlice'
-import { doc, setDoc } from '@firebase/firestore'
 import db from '../../firebase'
 import './NavBar.scss'
-import 'react-modern-drawer/dist/index.css'
 
 const NavBar: FC = () => {
     const dispatch: Function = useAppDispatch()
@@ -42,7 +42,9 @@ const NavBar: FC = () => {
         const docRef = doc(db, 'search', id)
         const payload = { searchTerm: e.target.value }
         await setDoc(docRef, payload)
-        dispatch(editSearchTerm(e.target.value))
+        setTimeout(() => {
+            dispatch(editSearchTerm(e.target.value))
+        }, 300)
     }
 
     const routeChange: Function = (e: any) => {
