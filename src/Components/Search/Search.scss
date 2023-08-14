@@ -1,99 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
 
-*{
+* {
     box-sizing: border-box;
 }
 
-.search{
+.search {
     padding: 30px 30px;
-    &-item{
-        &-title{
+    &-item {
+        &-title {
             font-size: 27px;
             line-height: 33px;
             font-family: 'Comfortaa', cursive;
             margin-bottom: 10px;
         }
-        &-information{
+        &-information {
             font-size: 13px;
             line-height: 19px;
-            font-family: "Inter", Helvetica, Arial, sans-serif
+            font-family: 'Inter', Helvetica, Arial, sans-serif;
         }
-        &-manufacturer{
+        &-manufacturer {
             margin-bottom: 15px;
         }
-        &-footer{
+        &-footer {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             border-radius: 12px;
             padding: 10px;
             background-color: #fafafa;
             margin-bottom: 20px;
-            &-read-more{
+            &-read-more {
                 color: #ff5f1e;
                 font-size: 13px;
                 line-height: 19px;
-                font-family: "Inter", Helvetica, Arial, sans-serif;
+                font-family: 'Inter', Helvetica, Arial, sans-serif;
                 border-left: 1px solid #e6e6e6;
                 position: relative;
                 cursor: pointer;
-                & img{
+                & img {
                     position: absolute;
                     top: 0px;
-                    left: 5px;
+                    height: 24px;
                 }
-                & p{
+                & p {
                     padding-left: 25px;
-                    &:hover{
+                    &:hover {
                         text-decoration: underline;
                     }
                 }
             }
         }
     }
-    &-errors{
-        &-error-img{
+    &-errors {
+        &-error-img {
             display: block;
             margin: 0 auto;
         }
-        &-error-text{
+        &-error-text {
             text-align: center;
-            &-title{
-                color: rgba(0,0,0,.7);
+            &-title {
+                color: rgba(0, 0, 0, 0.7);
                 font-size: 45px;
                 line-height: 45px;
-                font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+                font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
                 margin-bottom: 10px;
             }
-            &-information{
-                color: rgba(0,0,0,.7);
+            &-information {
+                color: rgba(0, 0, 0, 0.7);
                 font-size: 26px;
                 line-height: 30px;
-                font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+                font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
             }
         }
     }
 }
 
-@media(min-width: 768px){
-    .search{
+@media (min-width: 768px) {
+    .search {
         padding: 50px 60px;
-        &-item{
-            &-title{
+        &-item {
+            &-title {
                 font-size: 38px;
                 line-height: 47px;
             }
-            &-information{
+            &-information {
                 font-size: 14px;
                 line-height: 26px;
             }
-            &-footer{
+            &-footer {
                 grid-template-columns: 3fr 1fr;
                 font-size: 14px;
                 line-height: 26px;
                 margin-bottom: 30px;
             }
         }
-        &-errors{
+        &-errors {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             align-items: center;
@@ -101,60 +101,60 @@
     }
 }
 
-@media(min-width: 1024px){
-    .search{
+@media (min-width: 1024px) {
+    .search {
         padding: 60px 75px;
-        &-item{
-            &-title{
+        &-item {
+            &-title {
                 font-size: 45px;
                 line-height: 55px;
             }
-            &-information{
+            &-information {
                 font-size: 16px;
                 line-height: 30px;
             }
-            &-footer{
+            &-footer {
                 grid-template-columns: 4fr 1fr;
                 font-size: 16px;
                 line-height: 30px;
             }
         }
-        &-errors{
+        &-errors {
             grid-template-columns: 2fr 8fr;
-            &-error-img{
+            &-error-img {
                 margin: 0 0;
                 justify-self: start;
             }
-            &-error-text{
+            &-error-text {
                 text-align: start;
             }
         }
     }
 }
 
-@media(min-width: 1440px){
-    .search{
+@media (min-width: 1440px) {
+    .search {
         padding: 60px 100px;
-        &-item{
-            &-footer{
+        &-item {
+            &-footer {
                 grid-template-columns: 8fr 1fr;
             }
         }
-        &-errors{
+        &-errors {
             grid-template-columns: 2fr 14fr;
-            &-error-img{
+            &-error-img {
                 margin: 0 0;
                 justify-self: start;
             }
-            &-error-text{
+            &-error-text {
                 text-align: start;
             }
         }
     }
 }
 
-@media(min-width: 1660px){
-    .search{
+@media (min-width: 1660px) {
+    .search {
         padding: 60px 300px;
     }
 }
