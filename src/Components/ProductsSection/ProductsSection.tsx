@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import { motion } from 'framer-motion'
 import { doc, setDoc } from '@firebase/firestore'
+import { motion } from 'framer-motion'
+import { FC } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
+import { setCurrentPageIdByUser } from '../../ReduxToolkit/Slices/CurrentPageId/CurrentPageId'
 import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
 import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
-import { setCurrentPageIdByUser } from '../../ReduxToolkit/Slices/CurrentPageId/CurrentPageId'
 import { PartsItemProps } from '../../Types/PartsProps'
 import db from '../../firebase'
 import './ProductsSection.scss'
@@ -25,7 +25,7 @@ const ProductsSection: FC<ProductsSectionProps> = ({
                 <h2 className="products-section-title">{sectionTitle}</h2>
 
                 <button className="products-section-btn">
-                    <Link to="cart"> SEE ALL PRODUCTS &#62;</Link>
+                    <Link to="shop"> SEE ALL PRODUCTS &#62;</Link>
                 </button>
             </div>
             <div className="products-section-products">

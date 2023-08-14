@@ -1,6 +1,6 @@
-import React, { FC, useEffect, useState } from 'react'
 import { doc, setDoc } from '@firebase/firestore'
-import { useAppSelector, useAppDispatch } from '../../Hooks/hooks'
+import { FC, useEffect, useState } from 'react'
+import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
 import { clearPartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
 import { changeTotalAmount } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
 import db from '../../firebase'
@@ -71,8 +71,6 @@ const CartItem: FC<CartItemProps> = ({
         dispatch(changeTotalAmount(amount))
     }
 
-    console.log(discount ? title : 'no')
-
     return (
         <div className="cart-item">
             {window.innerWidth > 768 ? (
@@ -80,8 +78,7 @@ const CartItem: FC<CartItemProps> = ({
                     <img src={image} alt="part" className="cart-item-img" />
                     <h2 className="cart-item-title">{title}</h2>
                     <p className="cart-item-price cart-item-text-content">
-                        £
-                        {discount ? discountPrice.toFixed(2) : price.toFixed(2)}
+                        £{discount ? discountPrice : price.toFixed(2)}
                     </p>
                     <p className="cart-item-quantity cart-item-text-content">
                         {amount}
