@@ -1,23 +1,54 @@
+import { doc, setDoc } from '@firebase/firestore'
 import { FC } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAppSelector } from '../../Hooks/hooks'
+import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
+import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
+import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
+import db from '../../firebase'
 import './ProductPageItem.scss'
 
 const ProductPageItem: FC = () => {
     const parts: Array<{
         id: number
-        image: string
         title: string
         price: number
         discount: boolean
         discountPrice: number
         productCode: string
         manufacturer: string
+        image: string
+        popularity: number
+        averageRating: number
+        docId: string
+        amount: number
         categories: Array<string>
     }> = useAppSelector((state) => state.parts.parts)
+    const dispatch: Function = useAppDispatch()
+
     const { currentPageId } = useAppSelector((state) => state.currentPageId)
 
     const navigate = useNavigate()
+
+    const totalAmount = useAppSelector((state) => state.total)
+
+    const handleBuy: Function = async (id: number, docId: string) => {
+        const currentAmount = parts.find((part) => part.id === id)?.amount
+        const docRef = doc(db, 'parts', docId)
+        const payload = {
+            ...parts.find((part) => part.id === id),
+            amount: currentAmount === undefined ? 0 + 1 : currentAmount + 1,
+        }
+        delete payload.docId
+        await setDoc(docRef, payload)
+        dispatch(changePartAmount(id))
+    }
+
+    const changeTotal: Function = async (total: number, totalId: string) => {
+        const docRef = doc(db, 'total', totalId)
+        const payload = { total: total + 1 }
+        await setDoc(docRef, payload)
+        dispatch(increaseTotal())
+    }
 
     return (
         <>
@@ -33,6 +64,7 @@ const ProductPageItem: FC = () => {
                         manufacturer,
                         discount,
                         discountPrice,
+                        docId,
                     }) => {
                         if (id === currentPageId) {
                             return (
@@ -62,7 +94,16 @@ const ProductPageItem: FC = () => {
                                         <p className="product-page-item-information-manufacturer">
                                             Manufacturer: {manufacturer}
                                         </p>
-                                        <button className="product-page-item-information-add-btn">
+                                        <button
+                                            className="product-page-item-information-add-btn"
+                                            onClick={async () => {
+                                                await handleBuy(id, docId)
+                                                await changeTotal(
+                                                    totalAmount.total,
+                                                    totalAmount.id
+                                                )
+                                            }}
+                                        >
                                             Add to cart
                                         </button>
                                         <div className="product-page-item-information-categories">
