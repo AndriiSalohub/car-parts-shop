@@ -1,131 +1,152 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
 
-*{
+* {
     box-sizing: border-box;
 }
 
-.parts-output{
+.parts-output {
     padding: 0 30px;
 }
 
-.parts-item{
-    &-img{
+.parts-item {
+    position: relative;
+    &-img {
         overflow: hidden;
         position: relative;
-        & img{
+        & img {
             width: 100%;
             scale: 1;
-            transition: scale .3s ease-in-out;
-            &:hover{
+            transition: scale 0.3s ease-in-out;
+            &:hover {
                 scale: 1.1;
-                transition: scale .3s ease-in-out;
+                transition: scale 0.3s ease-in-out;
             }
         }
-        &-buttons{
+        &-buttons {
             opacity: 0;
-            transition: opacity .3s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
             position: absolute;
             z-index: 7;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            &-btn{
+            &-btn {
                 cursor: pointer;
                 background-color: #d3521e;
                 padding: 9px;
                 outline: none;
                 border: none;
-                &-img{
+                &-img {
                     width: 32px !important ;
                 }
-                &-link{
+                &-link {
                     border-left: 1px solid #f18a5f;
                 }
             }
         }
-        &:hover &-buttons{
+        &:hover &-buttons {
             opacity: 1;
-            transition: opacity .3s ease-in-out;
+            transition: opacity 0.3s ease-in-out;
         }
     }
-    &-title{
+    &-title {
         font-size: 13px;
         line-height: 19px;
-        font-family: "Comfortaa", Helvetica, Arial, sans-serif;
+        font-family: 'Comfortaa', Helvetica, Arial, sans-serif;
         margin-top: 10px;
     }
-    &-price{
+    &-price {
         color: #ff5f1e;
         font-size: 20px;
-        font-family: "Inter", Helvetica, Arial, sans-serif;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
         margin-top: 10px;
         margin-bottom: 15px;
-        & span{
+        & span {
             padding-right: 10px;
         }
     }
-    &-product-information{
+    &-product-information {
         font-size: 13px;
         line-height: 19px;
-        font-family: "Inter", Helvetica, Arial, sans-serif;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
     }
-    &-manufacturer{
+    &-manufacturer {
         margin-bottom: 20px;
     }
 }
 
-@media(min-width: 768px){
-    .parts-output{
+.price-with-discount-tryangel {
+    &-tryangel {
+        position: absolute;
+        display: block;
+        border: 30px solid transparent;
+        border-left: 30px solid #ff5f1e;
+        border-top: 30px solid #ff5f1e;
+        top: 0;
+        left: 0;
+    }
+    &-icon {
+        position: absolute;
+        display: block;
+        font-size: 20px;
+        color: #fff;
+        top: 5px;
+        left: 5px;
+    }
+}
+
+@media (min-width: 768px) {
+    .parts-output {
         padding: 0 60px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 20px;
     }
 
-    .parts-item{
-        &-title{
+    .parts-item {
+        &-title {
             font-size: 18px;
             line-height: 26px;
         }
-        &-product-information{
+        &-product-information {
             font-size: 14px;
             line-height: 26px;
         }
-        &-manufacturer{
+        &-manufacturer {
             margin-bottom: 0px;
         }
     }
 }
 
-@media(min-width: 1024px){
-    .parts-output{
+@media (min-width: 1024px) {
+    .parts-output {
         padding: 0 75px;
         grid-template-columns: repeat(4, 1fr);
         grid-gap: 20px;
     }
-    .parts-item{
-        &-title{
+    .parts-item {
+        &-title {
             font-size: 21px;
             line-height: 31px;
         }
-        &-product-information{
+        &-product-information {
             font-size: 16px;
             line-height: 30px;
         }
-        &-manufacturer{
+        &-manufacturer {
             margin-bottom: 20px;
         }
     }
 }
 
-@media(min-width: 1440px){
-    .parts-output{
+@media (min-width: 1440px) {
+    .parts-output {
         padding: 0 100px;
     }
 }
 
-@media(min-width: 1660px){
-    .parts-output{
+@media (min-width: 1660px) {
+    .parts-output {
         padding: 0 300px;
     }
 }
