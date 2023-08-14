@@ -1,9 +1,9 @@
-import React, { FC } from 'react'
-import { useAppSelector } from '../Hooks/hooks'
+import { FC } from 'react'
 import FilterPanel from '../Components/FilterPanel/FilterPanel'
 import PartsOutput from '../Components/PartsOutput/PartsOutput'
 import Subheader from '../Components/Subheader/Subheader'
 import UsefulInformation from '../Components/UsefulInformation/UsefulInformation'
+import { useAppSelector } from '../Hooks/hooks'
 
 const ShopPage: FC = () => {
     const parts: Array<{
