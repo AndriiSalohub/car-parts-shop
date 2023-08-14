@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
 import { doc, setDoc } from '@firebase/firestore'
+import { FC } from 'react'
+import { NavLink } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../Hooks/hooks'
+import { setCurrentPageIdByUser } from '../../ReduxToolkit/Slices/CurrentPageId/CurrentPageId'
 import { changePartAmount } from '../../ReduxToolkit/Slices/PartsSlice/PartsSlice'
 import { increaseTotal } from '../../ReduxToolkit/Slices/TotalSlice/TotalSlice'
-import { NavLink } from 'react-router-dom'
-import { setCurrentPageIdByUser } from '../../ReduxToolkit/Slices/CurrentPageId/CurrentPageId'
-import { PartsOutputProps, PartsItemProps } from '../../Types/PartsProps'
+import { PartsItemProps, PartsOutputProps } from '../../Types/PartsProps'
 import db from '../../firebase'
 import './PartsOutput.scss'
 
@@ -175,6 +175,32 @@ const PartsItem: FC<PartsItemProps> = ({
                     </NavLink>
                 </div>
             </div>
+            <span
+                className="price-with-discount-tryangel"
+                style={
+                    discount
+                        ? {
+                              display: 'block',
+                          }
+                        : {
+                              display: 'none',
+                          }
+                }
+            ></span>
+            <span
+                className="price-with-discount-icon"
+                style={
+                    discount
+                        ? {
+                              display: 'block',
+                          }
+                        : {
+                              display: 'none',
+                          }
+                }
+            >
+                &#9733;
+            </span>
             <h2 className="parts-item-title">{title}</h2>
             <p className="parts-item-price">
                 {discount ? (
