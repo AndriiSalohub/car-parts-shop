@@ -1,49 +1,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;600&family=Inter:wght@400;700&display=swap');
 
-*{
+* {
     box-sizing: border-box;
 }
 
-.product-page-item{
+.product-page-item {
     padding: 0px 30px;
     overflow: hidden;
-    &-image{   
-        position: absolute;
-        min-width: 100%;
-        min-height: 100%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        &-container{
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            position: relative;
+    margin-bottom: 50px;
+    position: relative;
+    &-list {
+        margin-top: 10px;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+        line-height: 20px;
+        list-style: inside;
+        &-item {
+            margin-top: 5px;
+        }
+        & span {
+            font-weight: 700;
         }
     }
-    &-information{
+    &-container {
+        display: flex;
+        gap: 30px;
+    }
+    &-image {
+        width: 65%;
+    }
+    &-information {
         font-size: 13px;
         line-height: 19px;
-        font-family: "Inter", Helvetica, Arial, sans-serif;
-        &-title{
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+        &-title {
             margin-top: 15px;
             font-size: 35px;
             margin-bottom: 15px;
             font-weight: 600;
             font-family: 'Comfortaa', cursive;
         }
-        &-line{
+        &-line {
             width: 20%;
             border-bottom: 1px solid #ebebeb;
         }
-        &-price{
+        &-price {
             color: #ff5f1e;
             margin-top: 20px;
             margin-bottom: 25px;
             font-size: 35px;
-            font-family: "Inter", Helvetica, Arial, sans-serif;
+            font-family: 'Inter', Helvetica, Arial, sans-serif;
         }
-        &-add-btn{
+        &-add-btn {
             display: block;
             font-size: 16px;
             font-weight: 600;
@@ -57,57 +64,91 @@
             line-height: 14px;
             width: 70%;
         }
-        &-categories{
+        &-categories {
             font-size: 14px;
             line-height: 26px;
-            font-family: "Inter", Helvetica, Arial, sans-serif;
+            font-family: 'Inter', Helvetica, Arial, sans-serif;
             border-bottom: 1px solid #ebebeb;
             padding-bottom: 10px;
-            &-title{
+            &-title {
                 color: #a8a8a8;
             }
-            &-categorie{
+            &-categorie {
                 color: #ff5f1e;
-                &:hover{
+                &:hover {
                     text-decoration: underline;
                     cursor: pointer;
                 }
             }
         }
-        &-share{
+        &-share {
             font-size: 16px;
             line-height: 26px;
-            font-family: "Inter", Helvetica, Arial, sans-serif;
-            & a{
+            font-family: 'Inter', Helvetica, Arial, sans-serif;
+            & a {
                 padding-left: 5px;
-                & img{
+                & img {
                     width: 16px;
                     height: 16px;
                 }
             }
         }
     }
+    &-contacts {
+        text-align: center;
+        margin-top: 30px;
+        font-family: 'Inter', Helvetica, Arial, sans-serif;
+        &-title {
+            font-size: 12px;
+            font-weight: 700;
+        }
+        &-phone {
+            margin-top: 15px;
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        &-days {
+            font-weight: 700;
+            font-size: 14px;
+        }
+        &-time {
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    }
 }
 
-@media(min-width: 768px){
-    .product-page-item{
-        padding: 0 60px;
-        &-image{   
-            &-container{
-                height: 700px;
-            }
+.description {
+    margin-top: 10px;
+    line-height: 25px;
+    font-family: 'Inter', Helvetica, Arial, sans-serif;
+}
+
+@media (max-width: 1000px) {
+    .product-page-item {
+        &-container {
+            flex-direction: column;
         }
-        &-information{
+        &-image {
+            width: 100%;
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .product-page-item {
+        padding: 0 60px;
+        &-information {
             font-size: 14px;
             line-height: 26px;
-            &-title{
+            &-title {
                 font-size: 35px;
                 line-height: 40px;
             }
-            &-line{
+            &-line {
                 width: 15%;
             }
-            &-add-btn{
+            &-add-btn {
                 margin: 10px 0px;
                 width: 40%;
             }
@@ -115,47 +156,30 @@
     }
 }
 
-@media(min-width: 1024px){
-    .product-page-item{
+@media (min-width: 1024px) {
+    .product-page-item {
         padding: 0 75px;
-        &-image{   
-            &-container{
-                height: 420px;
-            }
-        }
-        &-container{
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 20px;
-        }
-        &-image{
-            height: 100%;
-        }
-        &-information{
+        &-information {
             font-size: 16px;
             line-height: 30px;
-            &-title{
+            &-title {
                 margin-top: 0;
             }
         }
     }
 }
 
-
-@media(min-width: 1440px){
-    .product-page-item{
+@media (min-width: 1440px) {
+    .product-page-item {
         padding: 0 100px;
-        &-image{   
-            &-container{
-                height: 780px;
-            }
+        &-image {
+            width: 50%;
         }
     }
 }
 
-
-@media(min-width: 1660px){
-    .product-page-item{
+@media (min-width: 1660px) {
+    .product-page-item {
         padding: 0 300px;
     }
 }
