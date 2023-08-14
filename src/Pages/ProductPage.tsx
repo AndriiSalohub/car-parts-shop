@@ -1,4 +1,3 @@
-import React from 'react'
 import ChangeProduct from '../Components/ChangeProduct/ChangeProduct'
 import ProductPageItem from '../Components/ProductPageItem/ProductPageItem'
 import Subheader from '../Components/Subheader/Subheader'
