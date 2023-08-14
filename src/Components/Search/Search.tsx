@@ -1,4 +1,5 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
+import { NavLink } from 'react-router-dom'
 import { useAppSelector } from '../../Hooks/hooks'
 import './Search.scss'
 
@@ -90,7 +91,9 @@ const SearchItem: FC<SearchItemProps> = ({
                         src="https://i.ibb.co/7RRSpYp/files.png"
                         alt="read-more"
                     />{' '}
-                    <p>Read More</p>
+                    <NavLink to={`/shop/${productCode}`}>
+                        <p>Read More</p>
+                    </NavLink>
                 </div>
             </div>
         </div>

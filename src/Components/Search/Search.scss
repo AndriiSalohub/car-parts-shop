@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 .search {
     padding: 30px 30px;
     &-item {
@@ -29,7 +33,6 @@
             background-color: #fafafa;
             margin-bottom: 20px;
             &-read-more {
-                color: #ff5f1e;
                 font-size: 13px;
                 line-height: 19px;
                 font-family: 'Inter', Helvetica, Arial, sans-serif;
@@ -42,6 +45,7 @@
                     height: 24px;
                 }
                 & p {
+                    color: #ff5f1e;
                     padding-left: 25px;
                     &:hover {
                         text-decoration: underline;
